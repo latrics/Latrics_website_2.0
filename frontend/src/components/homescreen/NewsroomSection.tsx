@@ -4,7 +4,7 @@ import SectionLayout from "../SectionLayout";
 
 export default function NewsroomSection() {
   return (
-    <SectionLayout number="06 / NEWSROOM" subtitle="Latest from Latrics.">
+    <SectionLayout number="06 / NEWSROOM" title="Newsroom" subtitle="Latest from Latrics.">
       <div className="grid grid-cols-1 md:grid-cols-2 w-full">
         {/* Left Featured News */}
         <div className="flex flex-col border-b md:border-b-0 md:border-r border-gray-200">
