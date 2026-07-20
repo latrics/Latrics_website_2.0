@@ -137,11 +137,11 @@ export default function ApplyFormSection() {
               <div className="flex flex-col sm:flex-row sm:items-center gap-6 pt-2">
                 <button 
                   type="submit"
-                  className="bg-black text-white px-8 py-3.5 text-sm font-semibold hover:bg-neutral-800 transition-colors"
+                  className="bg-[#da291c] text-white px-8 py-3.5 text-sm font-semibold hover:bg-red-700 transition-colors"
                 >
                   Submit application
                 </button>
-                <span className="text-[10px] md:text-xs font-semibold tracking-widest text-brand-olive uppercase">
+                <span className="text-[10px] md:text-xs font-semibold tracking-widest text-[#da291c] uppercase">
                   RESPONSES REVIEWED WITHIN 5 BUSINESS DAYS
                 </span>
               </div>

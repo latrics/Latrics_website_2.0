@@ -16,8 +16,8 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <TerrainDeskSection />
-      <SolutionsSection />
-      <StatsSection />
+      {/* <SolutionsSection /> */}
+      {/* <StatsSection /> */}
       <IndustriesSection />
       <CaseStudiesSection />
       <NewsroomSection />

@@ -12,20 +12,12 @@ export default function PartnersHero() {
 
   return (
     <section 
-      className="relative min-h-[70vh] flex items-center bg-gray-50 pt-32 pb-20 border-b border-gray-200"
+      className="relative min-h-[70vh] flex items-center bg-gray-50 pt-32 pb-20 border-b border-gray-200 bg-cover bg-center"
       style={{
-        backgroundImage: `repeating-linear-gradient(
-          -45deg,
-          #e5e7eb,
-          #e5e7eb 1px,
-          transparent 1px,
-          transparent 20px
-        )`,
-        backgroundSize: "28px 28px"
+        backgroundImage: `url('/assets/partners_page_bg.png')`,
       }}
     >
-      {/* Background tint overlay */}
-      <div className="absolute inset-0 bg-white/60 pointer-events-none" />
+      {/* Background tint overlay removed per user request */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
         <div className="max-w-4xl">
@@ -33,7 +25,7 @@ export default function PartnersHero() {
             LATRICS CHANNEL PARTNER PROGRAM
           </p>
           
-          <h1 className="text-4xl md:text-6xl font-bold text-brand-charcoal mb-6 leading-tight font-sans">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight font-sans">
             Grow your business with <br />
             autonomous geospatial intelligence
           </h1>
@@ -44,7 +36,7 @@ export default function PartnersHero() {
           
           <button 
             onClick={scrollToForm}
-            className="bg-white border border-gray-300 text-brand-charcoal px-8 py-4 text-sm font-semibold hover:bg-gray-50 transition-colors shadow-sm"
+            className="bg-[#da291c] border border-transparent text-white px-8 py-4 text-sm font-semibold hover:bg-red-700 transition-colors shadow-sm"
           >
             Apply to become a partner &darr;
           </button>

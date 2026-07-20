@@ -1,13 +1,37 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import { usePathname } from "next/navigation";
+import React, { useState, useEffect } from "react";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      // Hide if scrolling down past 50px, show if scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 px-8 py-6 flex items-center justify-between bg-black/50 backdrop-blur-sm">
+      <nav 
+        className={`fixed top-0 left-0 w-full z-50 px-8 py-6 flex items-center justify-between bg-black/50 backdrop-blur-sm transition-transform duration-300 ${
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <div className="flex items-center gap-12">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
@@ -16,21 +40,27 @@ export default function Navbar() {
 
           {/* Navigation Links */}
           <div className="hidden lg:flex items-center gap-6 text-sm text-gray-300 font-medium">
-            <Link href="/" className="hover:text-white transition-colors">
-              Home
-            </Link>
-            <Link href="/products/licopter-p720" className="hover:text-white transition-colors">
-              Products
-            </Link>
-            <Link href="/partners" className="hover:text-white transition-colors">
-              Partners
-            </Link>
-            <Link href="/case-studies" className="hover:text-white transition-colors">
-              Case Studies
-            </Link>
-            <Link href="/about" className="hover:text-white transition-colors">
-              About
-            </Link>
+            {[
+              { name: "Home", href: "/", exact: true },
+              { name: "Products", href: "/products/licopter-p720", match: "/products" },
+              { name: "Partners", href: "/partners", match: "/partners" },
+              { name: "Case Studies", href: "/case-studies", match: "/case-studies" },
+              { name: "About", href: "/about", match: "/about" }
+            ].map((link) => {
+              const active = link.exact 
+                ? pathname === link.href 
+                : pathname?.startsWith(link.match);
+
+              return (
+                <Link 
+                  key={link.name}
+                  href={link.href} 
+                  className={`transition-colors py-1 ${active ? "text-white border-b-2 border-[#da291c] font-semibold" : "hover:text-white"}`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
         </div>
 
