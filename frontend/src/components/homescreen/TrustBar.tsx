@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Check } from "lucide-react";
 
 export default function TrustBar() {
@@ -16,8 +17,8 @@ export default function TrustBar() {
 
         {/* DGCA Certified Block */}
         <div className="w-full md:w-[25%] p-8 border-b md:border-b-0 md:border-r border-gray-200 flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full bg-brand-red flex items-center justify-center shrink-0">
-            <Check className="text-white w-5 h-5" strokeWidth={3} />
+          <div className="w-12 h-12 relative shrink-0">
+            <Image src="/assets/DGCA Stamp seal.png" alt="DGCA Certified" fill className="object-contain" />
           </div>
           <div>
             <h4 className="text-brand-charcoal font-bold text-lg">DGCA Certified</h4>
@@ -42,8 +43,8 @@ export default function TrustBar() {
 
         {/* Made in India Block */}
         <div className="w-full md:w-[25%] p-8 flex items-center gap-4 relative overflow-hidden">
-          <div className="w-12 h-12 rounded-full border-2 border-brand-red flex items-center justify-center shrink-0 relative z-10">
-            <Check className="text-brand-red w-5 h-5" strokeWidth={3} />
+          <div className="w-12 h-12 relative shrink-0 z-10">
+            <Image src="/assets/make_in_india_stamp.png" alt="Made in India" fill className="object-contain" />
           </div>
           <div className="relative z-10">
             <h4 className="text-brand-charcoal font-bold text-lg">Made in India</h4>
