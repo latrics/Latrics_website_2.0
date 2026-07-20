@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 
 export default function SchoolCampusCaseStudy() {
   return (
@@ -216,13 +217,10 @@ export default function SchoolCampusCaseStudy() {
            </div>
            
            <div className="md:w-3/4 md:border-l border-gray-200 grid grid-cols-1 sm:grid-cols-2">
-             <div className="border-b sm:border-r border-gray-200 border-dashed bg-gray-50/50">
-                <div className="h-48 flex flex-col items-center justify-center border-b border-gray-200 border-dashed text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 mb-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                  </svg>
-                  <span className="font-medium text-sm text-gray-600">Topographic map</span>
-                  <span className="text-xs">or <u className="cursor-pointer">browse files</u></span>
+              <div className="border-b sm:border-r border-gray-200 border-dashed bg-gray-50/50 group">
+                <div className="h-48 relative overflow-hidden border-b border-gray-200 border-dashed bg-gray-900 cursor-pointer">
+                  <Image src="/assets/topo_map.png" alt="Topographic map" fill className="object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
                 </div>
                 <div className="p-8">
                    <span className="text-[#e03020] text-xs font-semibold tracking-wider uppercase">Topographic Map</span>
@@ -230,13 +228,10 @@ export default function SchoolCampusCaseStudy() {
                    <p className="text-gray-500 text-sm leading-relaxed">1:500 scale topographic map with complete boundary demarcation, asset positions, and spot-level measurements across the school.</p>
                 </div>
              </div>
-             <div className="border-b border-gray-200 border-dashed bg-gray-50/50">
-                <div className="h-48 flex flex-col items-center justify-center border-b border-gray-200 border-dashed text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 mb-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                  </svg>
-                  <span className="font-medium text-sm text-gray-600">Digital elevation model</span>
-                  <span className="text-xs">or <u className="cursor-pointer">browse files</u></span>
+              <div className="border-b border-gray-200 border-dashed bg-gray-50/50 group">
+                <div className="h-48 relative overflow-hidden border-b border-gray-200 border-dashed bg-gray-900 cursor-pointer">
+                  <Image src="/assets/dem_model.png" alt="Digital elevation model" fill className="object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
                 </div>
                 <div className="p-8">
                    <span className="text-[#e03020] text-xs font-semibold tracking-wider uppercase">DEM</span>

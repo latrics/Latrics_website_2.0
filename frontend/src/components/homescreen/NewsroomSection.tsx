@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import SectionLayout from "../SectionLayout";
 
 export default function NewsroomSection() {
@@ -7,8 +8,10 @@ export default function NewsroomSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 w-full">
         {/* Left Featured News */}
         <div className="flex flex-col border-b md:border-b-0 md:border-r border-gray-200">
-          <div className="w-full aspect-[4/3] bg-[#1a1c18] relative flex items-end p-6">
-            <span className="text-gray-400 text-xs font-semibold tracking-widest uppercase">BVLOS-APPROVED CORRIDOR MISSION</span>
+          <div className="w-full aspect-[4/3] bg-[#1a1c18] relative flex items-end p-6 overflow-hidden group cursor-pointer">
+            <Image src="/assets/news_drone.png" alt="Drone over corridor" fill className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+            <span className="relative z-10 text-gray-300 text-xs font-semibold tracking-widest uppercase">BVLOS-APPROVED CORRIDOR MISSION</span>
           </div>
           <div className="p-8 bg-white">
             <p className="text-brand-red text-xs font-semibold tracking-widest uppercase mb-4">FEATURED • JUN 2026</p>

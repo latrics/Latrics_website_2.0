@@ -25,9 +25,9 @@ export default function TerrainDeskSection() {
             Buy, view, and analyse high-precision KML map data across India. Trusted by surveyors, urban planners, and GIS professionals — no flight required.
           </p>
           <div className="flex flex-wrap gap-4">
-            <button className="bg-brand-red text-white px-8 py-3 text-sm font-semibold hover:bg-red-700 transition-colors">
+            <a href="https://www.terraindesk.com/" target="_blank" rel="noopener noreferrer" className="bg-brand-red text-white px-8 py-3 text-sm font-semibold hover:bg-red-700 transition-colors inline-block text-center">
               Open Terrain Desk
-            </button>
+            </a>
             <button className="bg-white border border-gray-300 text-brand-charcoal px-8 py-3 text-sm font-semibold hover:bg-gray-50 transition-colors">
               Browse coverage
             </button>
@@ -51,9 +51,9 @@ export default function TerrainDeskSection() {
              </div>
              
              <div className="absolute bottom-6 left-6 flex items-center gap-4">
-               <button className="bg-white text-black px-6 py-2.5 text-xs font-semibold hover:bg-gray-200 flex items-center gap-2">
+               <a href="https://www.terraindesk.com/" target="_blank" rel="noopener noreferrer" className="bg-white text-black px-6 py-2.5 text-xs font-semibold hover:bg-gray-200 flex items-center gap-2 inline-block">
                  ▶ Launch live map
-               </button>
+               </a>
                
                <button 
                  onClick={toggleMute}
