@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import TypewriterText from '@/components/TypewriterText';
 
 export default function AboutPage() {
   return (
@@ -35,7 +36,7 @@ export default function AboutPage() {
             </div>
             <div className="lg:w-3/4">
               <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 leading-tight">
-                We believe accurate terrain data shouldn't be a bottleneck — it should be infrastructure. Latrics exists to make survey-grade 3D capture fast, indigenous, and available to every field team in India.
+                <TypewriterText text="We believe accurate terrain data shouldn't be a bottleneck — it should be infrastructure. Latrics exists to make survey-grade 3D capture fast, indigenous, and available to every field team in India." />
               </h2>
             </div>
           </div>
