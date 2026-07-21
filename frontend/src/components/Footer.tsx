@@ -103,55 +103,55 @@ export default function Footer() {
             <h4 className="text-white/70 text-xs font-semibold tracking-[0.2em] uppercase mb-10">
               Offices
             </h4>
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-8 gap-y-10">
-              
+            <div className="flex flex-col gap-8">
+
               {/* Hyderabad HQ */}
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-sm">🇮🇳</span>
-                  <h4 className="text-white/70 text-[10px] font-semibold tracking-[0.1em] uppercase">HQ (Hyderabad)</h4>
+                  <h4 className="text-white/70 text-xs font-semibold tracking-[0.1em] uppercase">HQ (Hyderabad)</h4>
                 </div>
-                <p className="text-white/70 text-[10px] leading-relaxed mb-2">
+                <p className="text-white/70 text-xs leading-relaxed mb-2">
                   Plot No. 87, TNGO's Colony Phase 2, Financial District, Gachibowli, Hyderabad, Telangana 500046
                 </p>
-                <p className="text-white/50 text-[10px] font-medium">Office: +91 90100 11223</p>
-                <p className="text-white/50 text-[10px] font-medium">Sivaram Kumar: +91 9908888911</p>
+                <p className="text-white/50 text-xs font-medium">Office: +91 90100 11223</p>
+                <p className="text-white/50 text-xs font-medium">Sivaram Kumar: +91 9908888911</p>
               </div>
 
               {/* Bangalore */}
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-sm">🇮🇳</span>
-                  <h4 className="text-white/70 text-[10px] font-semibold tracking-[0.1em] uppercase">Bangalore</h4>
+                  <h4 className="text-white/70 text-xs font-semibold tracking-[0.1em] uppercase">Bangalore</h4>
                 </div>
-                <p className="text-white/70 text-[10px] leading-relaxed mb-2">
+                <p className="text-white/70 text-xs leading-relaxed mb-2">
                   Floor No.19th Main, 151/1, 23rd Cross, 2nd Block, Rajajinagar, Bengaluru Urban, 560010
                 </p>
-                <p className="text-white/50 text-[10px] font-medium">Sureka G: +91 8884952357</p>
+                <p className="text-white/50 text-xs font-medium">Sureka G: +91 8884952357</p>
               </div>
 
               {/* Delhi NCR */}
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-sm">🇮🇳</span>
-                  <h4 className="text-white/70 text-[10px] font-semibold tracking-[0.1em] uppercase">Delhi NCR</h4>
+                  <h4 className="text-white/70 text-xs font-semibold tracking-[0.1em] uppercase">Delhi NCR</h4>
                 </div>
-                <p className="text-white/70 text-[10px] leading-relaxed mb-2">
+                <p className="text-white/70 text-xs leading-relaxed mb-2">
                   sanjay.pathak@latrics.com
                 </p>
-                <p className="text-white/50 text-[10px] font-medium">Sanjay Pathak: +91 8130532944</p>
+                <p className="text-white/50 text-xs font-medium">Sanjay Pathak: +91 8130532944</p>
               </div>
 
               {/* North-East */}
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-sm">🇮🇳</span>
-                  <h4 className="text-white/70 text-[10px] font-semibold tracking-[0.1em] uppercase">North-East (Assam)</h4>
+                  <h4 className="text-white/70 text-xs font-semibold tracking-[0.1em] uppercase">North-East (Assam)</h4>
                 </div>
-                <p className="text-white/70 text-[10px] leading-relaxed mb-2">
+                <p className="text-white/70 text-xs leading-relaxed mb-2">
                   Odalbakra, Kahilipara, Guwahati, Assam, 781034
                 </p>
-                <p className="text-white/50 text-[10px] font-medium">Rajib Saikia: +91 8822332132</p>
+                <p className="text-white/50 text-xs font-medium">Rajib Saikia: +91 8822332132</p>
               </div>
 
             </div>

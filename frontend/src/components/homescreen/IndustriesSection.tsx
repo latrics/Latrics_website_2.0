@@ -131,7 +131,7 @@ function IndustryCard({ ind, index }: { ind: any, index: number }) {
 
 export default function IndustriesSection() {
   return (
-    <SectionLayout number="03 / INDUSTRIES WE SERVE" title="Six sectors served.">
+    <SectionLayout number="03 / INDUSTRIES WE SERVE" title="Six sectors served">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full border-l-0 md:border-l border-gray-200">
         {industries.map((ind, i) => (
           <IndustryCard key={i} ind={ind} index={i} />
