@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import SectionLayout from "../SectionLayout";
 
 export default function CaseStudiesSection() {
@@ -24,7 +25,7 @@ export default function CaseStudiesSection() {
               <span className="text-brand-red text-xs font-semibold uppercase border border-gray-200 px-2 py-1">40 KM / 7 DAYS</span>
               <span className="text-brand-olive text-xs font-semibold uppercase border border-gray-200 px-2 py-1">HIGHWAYS & RAIL</span>
             </div>
-            <p className="text-brand-olive text-xs font-semibold tracking-widest uppercase">NHAI • MAHARASHTRA — <span className="text-brand-red cursor-pointer hover:underline">READ CASE →</span></p>
+            <p className="text-brand-olive text-xs font-semibold tracking-widest uppercase">NHAI • MAHARASHTRA — <Link href="/case-studies" className="text-brand-red cursor-pointer hover:underline">READ CASE →</Link></p>
           </div>
         </div>
         
@@ -40,7 +41,7 @@ export default function CaseStudiesSection() {
               <span className="text-brand-red text-xs font-semibold uppercase border border-gray-200 px-2 py-1">4 HR RESPONSE</span>
               <span className="text-brand-olive text-xs font-semibold uppercase border border-gray-200 px-2 py-1">EMERGENCY SERVICES</span>
             </div>
-            <p className="text-brand-olive text-xs font-semibold tracking-widest uppercase">ASSAM DISASTER CELL — <span className="text-brand-red cursor-pointer hover:underline">READ CASE →</span></p>
+            <p className="text-brand-olive text-xs font-semibold tracking-widest uppercase">ASSAM DISASTER CELL — <Link href="/case-studies" className="text-brand-red cursor-pointer hover:underline">READ CASE →</Link></p>
           </div>
         </div>
 
@@ -56,7 +57,7 @@ export default function CaseStudiesSection() {
               <span className="text-brand-red text-xs font-semibold uppercase border border-gray-200 px-2 py-1">99% ACCURACY</span>
               <span className="text-brand-olive text-xs font-semibold uppercase border border-gray-200 px-2 py-1">MINING SECTOR</span>
             </div>
-            <p className="text-brand-olive text-xs font-semibold tracking-widest uppercase">ODISHA MINES — <span className="text-brand-red cursor-pointer hover:underline">READ CASE →</span></p>
+            <p className="text-brand-olive text-xs font-semibold tracking-widest uppercase">ODISHA MINES — <Link href="/case-studies" className="text-brand-red cursor-pointer hover:underline">READ CASE →</Link></p>
           </div>
         </div>
 
@@ -72,7 +73,7 @@ export default function CaseStudiesSection() {
               <span className="text-brand-red text-xs font-semibold uppercase border border-gray-200 px-2 py-1">ZERO DOWNTIME</span>
               <span className="text-brand-olive text-xs font-semibold uppercase border border-gray-200 px-2 py-1">ENERGY SECTOR</span>
             </div>
-            <p className="text-brand-olive text-xs font-semibold tracking-widest uppercase">POWERGRID CORP — <span className="text-brand-red cursor-pointer hover:underline">READ CASE →</span></p>
+            <p className="text-brand-olive text-xs font-semibold tracking-widest uppercase">POWERGRID CORP — <Link href="/case-studies" className="text-brand-red cursor-pointer hover:underline">READ CASE →</Link></p>
           </div>
         </div>
 
