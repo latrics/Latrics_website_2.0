@@ -7,7 +7,7 @@ export default function ProductOverview() {
     <div id="overview" className="w-full py-24 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-8 lg:px-12">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-          
+
           {/* Left: Image */}
           <div className="relative w-full lg:w-1/2 aspect-square max-h-[600px] border border-gray-200 p-2">
             <Image src="/assets/product_overview_drone720.jpg" alt="LiCopter P720 drone" fill className="object-cover" />
@@ -18,13 +18,13 @@ export default function ProductOverview() {
             <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
               Product Overview
             </h3>
-            
+
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight mb-6">
               Multi-sensor intelligence for true 3D reality capture
             </h2>
 
             <p className="text-gray-500 text-base md:text-lg leading-relaxed font-medium mb-12 max-w-lg">
-              An indigenous, DGCA type-certified LiDAR drone, designed and made in India. The LiCopter P720 pairs an indigenous LiDAR seamlessly integrated with IMU and GPS, deployed across mining, mobility, urban development, energy, water, and emergency response — wherever most platforms can&apos;t reach.
+              An indigenous, DGCA type-certified LiDAR drone, designed and made in India. The LiCopter P720 pairs an indigenous LiDAR seamlessly integrated with IMU and GPS, deployed across mining, mobility, urban development, energy, water, and emergency response - wherever most platforms can&apos;t reach.
             </p>
 
             <div className="flex flex-wrap gap-x-10 gap-y-6">
@@ -47,7 +47,7 @@ export default function ProductOverview() {
 
         {/* Second Block: Field Ready */}
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 mt-24">
-          
+
           {/* Left: Image */}
           <div className="w-full lg:w-1/2 aspect-[4/3] max-h-[500px] border border-gray-200 p-2">
             <ImagePlaceholder mainText="Field durability photo" />
@@ -58,7 +58,7 @@ export default function ProductOverview() {
             <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
               Field-Ready Durability
             </h3>
-            
+
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">
               Field-ready durability
             </h2>
