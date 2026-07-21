@@ -33,7 +33,7 @@ export default function AboutPage() {
         <SectionLayout number="01 / MISSION" title="Mission">
           <div className="p-8 lg:p-16">
             <h2 className="text-3xl lg:text-5xl font-semibold text-brand-charcoal leading-tight">
-              <TypewriterText text="We believe accurate terrain data shouldn't be a bottleneck — it should be infrastructure. Latrics exists to make survey-grade 3D capture fast, indigenous, and available to every field team in India." />
+              <TypewriterText text="We believe accurate terrain data shouldn't be a bottleneck - it should be infrastructure. Latrics exists to make survey-grade 3D capture fast, indigenous, and available to every field team in India." />
             </h2>
           </div>
         </SectionLayout>
