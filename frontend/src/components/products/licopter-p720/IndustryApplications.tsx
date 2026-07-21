@@ -21,7 +21,7 @@ export default function IndustryApplications() {
     {
       title: "Energy & Utilities",
       tags: "SOLAR • TRANSMISSION",
-      image: "/assets/energy_1.png"
+      image: "/assets/energy_2.png"
     },
     {
       title: "Water Resources",
@@ -31,7 +31,7 @@ export default function IndustryApplications() {
     {
       title: "Emergency Services",
       tags: "DISASTER MAPPING • RESPONSE",
-      image: "/assets/news_drone.png"
+      image: "/assets/emergency5.png"
     }
   ];
 
@@ -52,7 +52,7 @@ export default function IndustryApplications() {
           {sectors.map((sector, idx) => (
             <div key={idx} className="bg-white flex flex-col group cursor-pointer">
               <div className="w-full aspect-[4/3] relative overflow-hidden">
-                <Image src={sector.image} alt={sector.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <Image src={sector.image as string} alt={sector.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="p-6">
                 <h4 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-[#da291c] transition-colors">
