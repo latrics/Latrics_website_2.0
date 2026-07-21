@@ -1,19 +1,26 @@
 import React from "react";
-import ImagePlaceholder from "./ImagePlaceholder";
 
 export default function ProductHero() {
   return (
-    <div className="relative w-full h-[85vh] min-h-[600px] flex items-end">
-      {/* Background Placeholder */}
-      <div className="absolute inset-0 z-0">
-        <ImagePlaceholder mainText="Drop a LiCopter P720 hero photo or video still" />
+    <div className="relative w-full min-h-screen flex items-center">
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+        <video 
+          src="/assets/drone_video_2.mov"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        />
       </div>
 
-      {/* Gradient Overlay for text readability */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+      {/* Dark Overlays for text readability */}
+      <div className="absolute inset-0 z-10 bg-black/60 pointer-events-none" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/90 via-black/60 to-transparent pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-8 lg:px-12 pb-16 lg:pb-24">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-8 lg:px-12 pt-20">
         <div className="max-w-3xl">
           <div className="flex items-center gap-4 mb-4">
             <span className="text-[#da291c] text-[10px] font-bold uppercase tracking-widest">

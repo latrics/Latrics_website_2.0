@@ -9,8 +9,14 @@ export default function AboutPage() {
         <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-zinc-900 to-black text-white pt-32 pb-24 px-8 lg:px-24">
-        <div className="max-w-4xl">
+      <section 
+        className="relative min-h-screen text-white pt-32 pb-24 px-8 lg:px-24 flex flex-col justify-center bg-cover bg-center"
+        style={{ backgroundImage: `url('/assets/vector_grad.png')` }}
+      >
+        {/* Dark Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-black/60 z-0" />
+        
+        <div className="relative z-10 max-w-4xl">
           <p className="text-orange-500 text-sm font-semibold tracking-wider mb-6 uppercase">Company</p>
           <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
             Engineering ground truth for India
