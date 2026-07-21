@@ -15,9 +15,10 @@ export default function ProductHero() {
         />
       </div>
 
-      {/* Dark Overlays for text readability */}
+      {/* Dark Overlays for text readability and hiding watermark */}
       <div className="absolute inset-0 z-10 bg-black/60 pointer-events-none" />
       <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/90 via-black/60 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-32 z-10 bg-gradient-to-t from-black via-black/90 to-transparent pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-8 lg:px-12 pt-20">
