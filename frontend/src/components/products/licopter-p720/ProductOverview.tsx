@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import ImagePlaceholder from "./ImagePlaceholder";
 
 export default function ProductOverview() {
@@ -8,8 +9,8 @@ export default function ProductOverview() {
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           
           {/* Left: Image */}
-          <div className="w-full lg:w-1/2 aspect-square max-h-[600px] border border-gray-200 p-2">
-            <ImagePlaceholder mainText="Drop a studio product photo" />
+          <div className="relative w-full lg:w-1/2 aspect-square max-h-[600px] border border-gray-200 p-2">
+            <Image src="/assets/product_overview_drone720.jpg" alt="LiCopter P720 drone" fill className="object-cover" />
           </div>
 
           {/* Right: Content */}
@@ -19,25 +20,25 @@ export default function ProductOverview() {
             </h3>
             
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight mb-6">
-              Engineered from the ground up for the field
+              Multi-sensor intelligence for true 3D reality capture
             </h2>
-            
+
             <p className="text-gray-500 text-base md:text-lg leading-relaxed font-medium mb-12 max-w-lg">
-              The LiCopter P720 pairs a carbon-composite airframe with an indigenously engineered LiDAR and RGB payload, delivering survey-grade point clouds at production scale — across mines, corridors, and terrain most platforms can&apos;t reach.
+              An indigenous, DGCA type-certified LiDAR drone, designed and made in India. The LiCopter P720 pairs an indigenous LiDAR seamlessly integrated with IMU and GPS, deployed across mining, mobility, urban development, energy, water, and emergency response — wherever most platforms can&apos;t reach.
             </p>
 
-            <div className="grid grid-cols-3 gap-8">
+            <div className="flex flex-wrap gap-x-10 gap-y-6">
               <div>
-                <div className="text-[#da291c] text-3xl font-black mb-1">60 min</div>
-                <div className="text-gray-400 text-[9px] font-bold tracking-[0.15em] uppercase">Endurance</div>
+                <div className="text-[#da291c] text-2xl md:text-3xl font-black mb-1 whitespace-nowrap">45+ min</div>
+                <div className="text-gray-400 text-[9px] font-bold tracking-[0.15em] uppercase whitespace-nowrap">Endurance</div>
               </div>
               <div>
-                <div className="text-[#da291c] text-3xl font-black mb-1">2.5 kg</div>
-                <div className="text-gray-400 text-[9px] font-bold tracking-[0.15em] uppercase">Max Payload</div>
+                <div className="text-[#da291c] text-2xl md:text-3xl font-black mb-1 whitespace-nowrap">Foldable</div>
+                <div className="text-gray-400 text-[9px] font-bold tracking-[0.15em] uppercase whitespace-nowrap">Design</div>
               </div>
               <div>
-                <div className="text-[#da291c] text-3xl font-black mb-1">IP54</div>
-                <div className="text-gray-400 text-[9px] font-bold tracking-[0.15em] uppercase">Weather Rating</div>
+                <div className="text-[#da291c] text-2xl md:text-3xl font-black mb-1 whitespace-nowrap">All-Terrain</div>
+                <div className="text-gray-400 text-[9px] font-bold tracking-[0.15em] uppercase whitespace-nowrap">Flight Capability</div>
               </div>
             </div>
           </div>
@@ -61,9 +62,9 @@ export default function ProductOverview() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">
               Field-ready durability
             </h2>
-            
+
             <p className="text-gray-500 text-base leading-relaxed font-medium max-w-md">
-              IP54-rated, carbon-composite airframe engineered for dust, heat, and monsoon conditions across mines, highways, and remote terrain.
+              Compact foldable design (900mm to 450mm) with an integrated detect-and-avoid system, rated for -20°C to 55°C operation across mines, highways, and remote terrain.
             </p>
           </div>
 
