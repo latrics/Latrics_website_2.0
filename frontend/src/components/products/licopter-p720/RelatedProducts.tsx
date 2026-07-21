@@ -5,21 +5,21 @@ import Link from "next/link";
 export default function RelatedProducts() {
   const products = [
     {
-      title: "LiCopter P720 — Editorial",
-      desc: "Spec-sheet product story",
-      placeholder: "LiCopter P720 v1",
+      title: "Terrain Desk Data",
+      desc: "Buy, view, and analyze high-precision map data",
+      placeholder: "Terrain Desk Data",
       url: "#"
     },
     {
-      title: "LiCopter P720 — Reference variant",
-      desc: "Alternate content layout",
-      placeholder: "LiCopter P720 v2",
+      title: "Terrain Desk Capture",
+      desc: "Flight and data capture application",
+      placeholder: "Terrain Desk Capture",
       url: "#"
     },
     {
-      title: "Case Study — School LiDAR Mapping",
-      desc: "Deployment in the field",
-      placeholder: "School LiDAR case study",
+      title: "Terrain Desk Planning",
+      desc: "Mission planning and execution software",
+      placeholder: "Terrain Desk Planning",
       url: "#"
     }
   ];
