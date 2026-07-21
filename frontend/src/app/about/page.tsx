@@ -45,21 +45,21 @@ export default function AboutPage() {
               <p className="text-brand-red font-bold mb-4">01</p>
               <h3 className="text-xl font-bold text-brand-charcoal mb-4">Field-first</h3>
               <p className="text-brand-olive leading-relaxed">
-                We build for the site, not the slide deck — every feature is validated against real deployments.
+                We build for the site, not the slide deck - every feature is validated against real deployments.
               </p>
             </div>
             <div>
               <p className="text-brand-red font-bold mb-4">02</p>
               <h3 className="text-xl font-bold text-brand-charcoal mb-4">Built in India</h3>
               <p className="text-brand-olive leading-relaxed">
-                Airframe to payload, engineered and manufactured indigenously — no dependency on imported platforms.
+                Airframe to payload, engineered and manufactured indigenously - no dependency on imported platforms.
               </p>
             </div>
             <div>
               <p className="text-brand-red font-bold mb-4">03</p>
               <h3 className="text-xl font-bold text-brand-charcoal mb-4">Precision, always</h3>
               <p className="text-brand-olive leading-relaxed">
-                Survey-grade accuracy is non-negotiable — every dataset meets the tolerance the job demands.
+                Survey-grade accuracy is non-negotiable - every dataset meets the tolerance the job demands.
               </p>
             </div>
           </div>
