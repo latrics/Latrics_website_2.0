@@ -55,10 +55,9 @@ export default function Footer() {
             <div>
               <h4 className="text-white font-bold text-lg mb-6">Platform</h4>
               <ul className="space-y-4 text-white/70 text-sm font-medium">
-                <li><Link href="#" className="hover:text-white transition-colors">LiCopter P720</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">LiDAR Payload</Link></li>
+                <li><Link href="#" className="hover:text-white transition-colors">Terrain Desk Data</Link></li>
                 <li><Link href="#" className="hover:text-white transition-colors">Terrain Desk Capture</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Latrics Digital</Link></li>
+                <li><Link href="#" className="hover:text-white transition-colors">Terrain Desk Planning</Link></li>
               </ul>
             </div>
           </div>
