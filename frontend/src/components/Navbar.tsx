@@ -68,16 +68,16 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <a href="https://www.terraindesk.com/" target="_blank" rel="noopener noreferrer" className="relative group cursor-pointer block">
             {/* Offset Border */}
-            <span className="absolute top-1.5 left-1.5 w-full h-full border border-white rounded-sm pointer-events-none transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5"></span>
+            <span className="absolute top-1.5 left-1.5 w-full h-full border border-white rounded-none pointer-events-none transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5"></span>
             {/* Main Button */}
-            <span className="relative inline-block bg-[#da291c] text-white px-6 py-2.5 text-sm font-semibold rounded-sm transition-transform group-hover:-translate-y-0.5 group-hover:-translate-x-0.5">
+            <span className="relative inline-block bg-[#da291c] text-white px-6 py-2.5 text-sm font-semibold rounded-none transition-transform group-hover:-translate-y-0.5 group-hover:-translate-x-0.5">
               Open Terrain Desk
             </span>
           </a>
 
           <button 
             onClick={() => setIsDemoModalOpen(true)}
-            className="bg-white text-black px-6 py-2.5 text-sm font-semibold hover:bg-gray-100 transition-colors rounded-sm"
+            className="bg-white text-black px-6 py-2.5 text-sm font-semibold hover:bg-gray-100 transition-colors rounded-none"
           >
             Request a demo
           </button>

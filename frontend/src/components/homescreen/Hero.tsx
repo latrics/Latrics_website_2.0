@@ -13,7 +13,8 @@ const slides = [
     title: "Building Better <br /> Tomorrow",
     description: "LiCopter P720 — India's first indigenous, DGCA-certified LiDAR drone. Multi-sensor intelligence for true 3D reality capture, from the mine to the grid.",
     primaryAction: "Request a demo",
-    secondaryAction: "Explore the Product"
+    secondaryAction: "Explore the Product",
+    secondaryUrl: "/products/licopter-p720"
   },
   {
     id: "slide-2",
@@ -23,7 +24,8 @@ const slides = [
     title: "Digital Intelligence, <br /> Mapped",
     description: "Survey-grade LiDAR point clouds turned into actionable geospatial intelligence — terrain, assets, and infrastructure in true 3D.",
     primaryAction: "Request a demo",
-    secondaryAction: "Explore Solutions"
+    secondaryAction: "Explore Solutions",
+    secondaryUrl: "#"
   },
   {
     id: "slide-3",
@@ -33,7 +35,8 @@ const slides = [
     title: "Powering <br /> Sustainable Energy",
     description: "20+ MW of owned solar capacity, monitored end-to-end — from site survey to asset performance.",
     primaryAction: "Request a demo",
-    secondaryAction: "Explore Solutions"
+    secondaryAction: "Explore Solutions",
+    secondaryUrl: "#"
   }
 ];
 
@@ -132,10 +135,17 @@ export default function Hero() {
                 </p>
                 
                 <div className="flex flex-wrap items-center gap-4">
-                  <a href="#demo-section" className="bg-brand-red text-white px-8 py-3.5 text-sm font-semibold hover:bg-red-700 transition-colors rounded-sm inline-block text-center">
+                  <a 
+                    href="#demo-section" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                    }}
+                    className="bg-brand-red text-white px-8 py-3.5 text-sm font-semibold hover:bg-red-700 transition-colors rounded-none inline-block text-center"
+                  >
                     {activeSlide.primaryAction}
                   </a>
-                  <Link href="/products/licopter-p720" className="bg-transparent border border-gray-400 text-white px-8 py-3.5 text-sm font-semibold hover:border-white transition-colors rounded-sm backdrop-blur-sm inline-block text-center">
+                  <Link href={activeSlide.secondaryUrl} className="bg-transparent border border-gray-400 text-white px-8 py-3.5 text-sm font-semibold hover:border-white transition-colors rounded-none backdrop-blur-sm inline-block text-center">
                     {activeSlide.secondaryAction}
                   </Link>
                 </div>
