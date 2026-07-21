@@ -1,27 +1,22 @@
 import React from "react";
-import ImagePlaceholder from "./ImagePlaceholder";
+import Image from "next/image";
 
 export default function ModularPayloads() {
   const modules = [
     {
-      title: "LiDAR Payload Module",
-      desc: "Survey-grade point cloud capture, hot-swappable",
-      placeholder: "LiDAR module"
+      title: "61MP Camera Payload",
+      desc: "Up to 45-min flight time, covering 1.2km² per flight at 100m altitude",
+      image: "/assets/61mp_camera.png"
     },
     {
-      title: "RGB Camera Payload",
-      desc: "High-resolution orthomosaic imaging",
-      placeholder: "RGB camera"
+      title: "LiDAR Payload",
+      desc: "Up to 40-min flight time, covering 1km² per flight at 100m altitude",
+      image: "/assets/lidar.png"
     },
     {
-      title: "Multispectral Sensor",
-      desc: "Crop health and vegetation index mapping",
-      placeholder: "Multispectral sensor"
-    },
-    {
-      title: "Extra Battery Pack",
-      desc: "Hot-swappable, 60-min rated cell",
-      placeholder: "Battery pack"
+      title: "Oblique Camera Payload",
+      desc: "Up to 45-min flight time, covering 1.2km² per flight at 100m altitude",
+      image: "/assets/oblique.png"
     }
   ];
 
@@ -38,11 +33,11 @@ export default function ModularPayloads() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200 shadow-sm">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gray-200 border border-gray-200 shadow-sm">
           {modules.map((mod, idx) => (
             <div key={idx} className="bg-white flex flex-col group">
-              <div className="w-full aspect-[4/3] p-1">
-                <ImagePlaceholder mainText={mod.placeholder} />
+              <div className="relative w-full aspect-[4/3] p-1 bg-gray-100">
+                <Image src={mod.image} alt={mod.title} fill className="object-contain" />
               </div>
               <div className="p-6">
                 <h4 className="text-sm font-bold text-gray-900 mb-2 group-hover:text-[#da291c] transition-colors">

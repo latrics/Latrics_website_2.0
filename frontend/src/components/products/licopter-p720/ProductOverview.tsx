@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import ImagePlaceholder from "./ImagePlaceholder";
 
 export default function ProductOverview() {
   return (
@@ -24,7 +23,7 @@ export default function ProductOverview() {
             </h2>
 
             <p className="text-gray-500 text-base md:text-lg leading-relaxed font-medium mb-12 max-w-lg">
-              An indigenous, DGCA type-certified LiDAR drone, designed and made in India. The LiCopter P720 pairs an indigenous LiDAR seamlessly integrated with IMU and GPS, deployed across mining, mobility, urban development, energy, water, and emergency response — wherever most platforms can&apos;t reach.
+              An indigenous, DGCA type-certified LiDAR drone, designed and made in India. The LiCopter P720 pairs an indigenous LiDAR seamlessly integrated with IMU and GPS, deployed across mining, mobility, urban development, energy, water, and emergency response wherever most platforms can&apos;t reach.
             </p>
 
             <div className="flex flex-wrap gap-x-10 gap-y-6">
@@ -49,8 +48,8 @@ export default function ProductOverview() {
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 mt-24">
           
           {/* Left: Image */}
-          <div className="w-full lg:w-1/2 aspect-[4/3] max-h-[500px] border border-gray-200 p-2">
-            <ImagePlaceholder mainText="Field durability photo" />
+          <div className="relative w-full lg:w-1/2 aspect-[4/3] max-h-[500px] border border-gray-200 p-2">
+            <Image src="/assets/aerospace_1.jpeg" alt="LiCopter P720 flying over remote terrain" fill className="object-cover" />
           </div>
 
           {/* Right: Content */}

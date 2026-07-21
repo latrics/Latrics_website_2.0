@@ -39,12 +39,12 @@ export default function IndustryApplications() {
     <div id="applications" className="w-full py-24 bg-[#fafafa]">
       <div className="max-w-7xl mx-auto px-8 lg:px-12">
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-7xl mx-auto mb-16">
           <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
             Industry Applications
           </h3>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight">
-            One platform, six sectors
+            One platform, Infinite possibilities
           </h2>
         </div>
 
