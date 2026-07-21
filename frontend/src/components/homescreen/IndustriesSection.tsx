@@ -51,6 +51,7 @@ const industries = [
     title: "Energy & Utilities",
     desc: "SOLAR • TRANSMISSION",
     bg: "bg-[#2c241c]",
+    video: "/assets/energy_vid.MP4",
   },
   {
     imageSubtitle: "RESERVOIR",
@@ -75,6 +76,13 @@ const industries = [
     title: "Emergency services",
     desc: "FLOOD • DISASTER MAPPING",
     bg: "bg-[#261c18]",
+    images: [
+      "/assets/emergency1.png",
+      "/assets/emergency2.png",
+      "/assets/emergency3.png",
+      "/assets/emergency4.png",
+      "/assets/emergency5.png"
+    ]
   },
 ];
 
@@ -109,10 +117,19 @@ function IndustryCard({ ind, index }: { ind: any, index: number }) {
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
           </AnimatePresence>
+        ) : ind.video ? (
+          <video
+            src={ind.video}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-0"
+          />
         ) : null}
         
-        {/* Overlay for text readability if there's an image */}
-        {ind.images && (
+        {/* Overlay for text readability if there's an image or video */}
+        {(ind.images || ind.video) && (
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-0 pointer-events-none" />
         )}
         

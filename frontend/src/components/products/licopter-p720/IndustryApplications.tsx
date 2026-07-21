@@ -1,37 +1,37 @@
 import React from "react";
-import ImagePlaceholder from "./ImagePlaceholder";
+import Image from "next/image";
 
 export default function IndustryApplications() {
   const sectors = [
     {
       title: "Mining",
       tags: "STOCKPILE • PIT PROGRESSION",
-      placeholder: "Mining photo"
+      image: "/assets/Mines1.png"
     },
     {
-      title: "Surveying",
-      tags: "TOPOGRAPHIC • CADASTRAL",
-      placeholder: "Surveying photo"
+      title: "Highways & Railways",
+      tags: "CORRIDOR MAPPING • INSPECTION",
+      image: "/assets/Highway.png"
     },
     {
-      title: "Construction",
-      tags: "PROGRESS • VOLUMETRIC",
-      placeholder: "Construction photo"
-    },
-    {
-      title: "Agriculture",
-      tags: "CROP HEALTH • TERRAIN",
-      placeholder: "Agriculture photo"
+      title: "Urban Development",
+      tags: "CITY PLANNING • 3D MODELING",
+      image: "/assets/SIDE VIEW.png"
     },
     {
       title: "Energy & Utilities",
       tags: "SOLAR • TRANSMISSION",
-      placeholder: "Energy photo"
+      image: "/assets/energy_2.png"
     },
     {
-      title: "Emergency Response",
-      tags: "FLOOD • DISASTER MAPPING",
-      placeholder: "Emergency photo"
+      title: "Water Resources",
+      tags: "HYDROLOGY • BATHYMETRY",
+      image: "/assets/WATER1.png"
+    },
+    {
+      title: "Emergency Services",
+      tags: "DISASTER MAPPING • RESPONSE",
+      image: "/assets/emergency5.png"
     }
   ];
 
@@ -50,9 +50,9 @@ export default function IndustryApplications() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 border border-gray-200 shadow-sm">
           {sectors.map((sector, idx) => (
-            <div key={idx} className="bg-white flex flex-col group">
-              <div className="w-full aspect-[4/3] p-1">
-                <ImagePlaceholder mainText={sector.placeholder} />
+            <div key={idx} className="bg-white flex flex-col group cursor-pointer">
+              <div className="w-full aspect-[4/3] relative overflow-hidden">
+                <Image src={sector.image as string} alt={sector.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="p-6">
                 <h4 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-[#da291c] transition-colors">
