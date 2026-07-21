@@ -1,5 +1,5 @@
 import React from "react";
-import ImagePlaceholder from "./ImagePlaceholder";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function RelatedProducts() {
@@ -7,19 +7,19 @@ export default function RelatedProducts() {
     {
       title: "Terrain Desk Data",
       desc: "Buy, view, and analyze high-precision map data",
-      placeholder: "Terrain Desk Data",
-      url: "#"
+      image: "/assets/tdd.png",
+      url: "https://terraindesk.com/"
     },
     {
       title: "Terrain Desk Capture",
       desc: "Flight and data capture application",
-      placeholder: "Terrain Desk Capture",
+      image: "/assets/tdc.png",
       url: "#"
     },
     {
       title: "Terrain Desk Planning",
       desc: "Mission planning and execution software",
-      placeholder: "Terrain Desk Planning",
+      image: "/assets/tdp.png",
       url: "#"
     }
   ];
@@ -40,8 +40,8 @@ export default function RelatedProducts() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gray-200 border border-gray-200 shadow-sm">
           {products.map((prod, idx) => (
             <Link key={idx} href={prod.url} className="bg-white flex flex-col group block">
-              <div className="w-full aspect-[4/3] p-1">
-                <ImagePlaceholder mainText={prod.placeholder} />
+              <div className="w-full aspect-[4/3] p-1 relative overflow-hidden bg-gray-100">
+                <Image src={prod.image} alt={prod.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="p-6">
                 <h4 className="text-sm font-bold text-gray-900 mb-2 group-hover:text-[#da291c] transition-colors">
