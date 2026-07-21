@@ -5,7 +5,7 @@ import WhyPartnerSection from "@/components/partners/WhyPartnerSection";
 import PartnerTiersSection from "@/components/partners/PartnerTiersSection";
 import ApplyFormSection from "@/components/partners/ApplyFormSection";
 import FaqSection from "@/components/partners/FaqSection";
-import PartnersFooter from "@/components/partners/PartnersFooter";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Channel Partner Program | Latrics",
@@ -14,14 +14,16 @@ export const metadata = {
 
 export default function PartnersPage() {
   return (
-    <main className="min-h-screen bg-white flex flex-col">
-      <Navbar />
+    <main className="min-h-screen flex flex-col">
+      <div className="relative z-10 bg-white flex-1">
+        <Navbar />
       <PartnersHero />
       <WhyPartnerSection />
       <PartnerTiersSection />
       <ApplyFormSection />
       <FaqSection />
-      <PartnersFooter />
+      </div>
+      <Footer />
     </main>
   );
 }

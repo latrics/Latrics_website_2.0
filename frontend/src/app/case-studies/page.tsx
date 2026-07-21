@@ -5,12 +5,13 @@ import Image from 'next/image';
 
 export default function SchoolCampusCaseStudy() {
   return (
-    <main className="min-h-screen bg-[#faf9f6]">
-      <Navbar />
+    <main className="min-h-screen flex flex-col">
+      <div className="relative z-10 bg-[#faf9f6] flex-1">
+        <Navbar />
 
       {/* Hero Section */}
-      <section className="bg-[#52595d] text-white pt-32 pb-16 px-8 lg:px-24">
-        <div className="max-w-6xl mx-auto">
+      <section className="min-h-screen bg-[#52595d] text-white pt-32 pb-16 px-8 lg:px-24 flex flex-col justify-center">
+        <div className="max-w-6xl mx-auto w-full">
           <div className="flex gap-4 mb-10">
             <span className="border border-gray-400 px-4 py-1.5 text-xs font-semibold tracking-wider uppercase rounded-sm">Case Study</span>
             <span className="border border-gray-400 px-4 py-1.5 text-xs font-semibold tracking-wider uppercase rounded-sm">Revenue & Land Records</span>
@@ -245,6 +246,7 @@ export default function SchoolCampusCaseStudy() {
       </div>
       
       {/* Footer Area - to show completeness */}
+      </div>
       <Footer />
     </main>
   );

@@ -12,7 +12,7 @@ export default function PartnersHero() {
 
   return (
     <section 
-      className="relative min-h-[70vh] flex items-center bg-gray-50 pt-32 pb-20 border-b border-gray-200 bg-cover bg-center"
+      className="relative min-h-screen flex items-center bg-gray-50 pt-32 pb-20 border-b border-gray-200 bg-cover bg-center"
       style={{
         backgroundImage: `url('/assets/partners_page_bg.png')`,
       }}

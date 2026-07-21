@@ -4,8 +4,9 @@ import Footer from '@/components/Footer';
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <Navbar />
+    <main className="min-h-screen flex flex-col">
+      <div className="relative z-10 bg-white flex-1">
+        <Navbar />
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-zinc-900 to-black text-white pt-32 pb-24 px-8 lg:px-24">
@@ -143,6 +144,7 @@ export default function AboutPage() {
 
 
 
+      </div>
       <Footer />
     </main>
   );

@@ -16,8 +16,9 @@ import Footer from "@/components/Footer";
 
 export default function LiCopterPage() {
   return (
-    <main className="min-h-screen bg-white selection:bg-[#da291c] selection:text-white">
-      <Navbar />
+    <main className="min-h-screen flex flex-col selection:bg-[#da291c] selection:text-white">
+      <div className="relative z-10 bg-white flex-1">
+        <Navbar />
 
       <ProductHero />
       <KeyHighlights />
@@ -33,6 +34,7 @@ export default function LiCopterPage() {
       <RelatedProducts />
       
       {/* Using the global immersive footer */}
+      </div>
       <Footer />
     </main>
   );
