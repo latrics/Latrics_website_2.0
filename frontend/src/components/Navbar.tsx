@@ -49,7 +49,7 @@ export default function Navbar() {
             ].map((link) => {
               const active = link.exact 
                 ? pathname === link.href 
-                : pathname?.startsWith(link.match);
+                : pathname?.startsWith(link.match || "");
 
               return (
                 <Link 
