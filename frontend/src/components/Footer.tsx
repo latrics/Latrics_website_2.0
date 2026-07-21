@@ -167,22 +167,12 @@ export default function Footer() {
             <button className="hover:text-white transition-colors">Cookie Settings</button>
           </div>
 
-          <div className="flex flex-col md:flex-row items-end justify-between gap-6 mt-auto">
+          <div className="flex items-end mt-auto">
             {/* Brand Typography */}
-            <div className="flex items-center">
+            <div className="flex items-center w-full">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight m-0 p-0 text-white select-none max-w-2xl">
                 <span className="text-[#da291c]">Building</span> Better Tomorrow
               </h1>
-            </div>
-
-            {/* Certification Badge Style */}
-            <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border border-white/20 flex flex-col items-center justify-center text-center p-3 relative shrink-0">
-              <div className="absolute inset-2 border border-white/10 rounded-full border-dashed animate-[spin_20s_linear_infinite]" />
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 mb-1 text-white">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-              </svg>
-              <span className="text-[10px] font-bold tracking-widest text-white">ISO</span>
-              <span className="text-[9px] text-white/50 tracking-widest">27001</span>
             </div>
           </div>
 
