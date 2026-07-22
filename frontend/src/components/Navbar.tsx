@@ -64,13 +64,36 @@ export default function Navbar() {
 
         {/* CTA Buttons */}
         <div className="flex items-center gap-6 relative z-10">
-          <a href="https://www.terraindesk.com/" target="_blank" rel="noopener noreferrer" className="relative group cursor-pointer block">
-            {/* Offset Border */}
-            <span className="absolute top-1.5 left-1.5 w-full h-full border border-white rounded-none pointer-events-none transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5"></span>
-            {/* Main Button */}
-            <span className="relative inline-block bg-[#da291c] text-white px-6 py-2.5 text-sm font-semibold rounded-none transition-transform group-hover:-translate-y-0.5 group-hover:-translate-x-0.5">
-              Open Terrain Desk
-            </span>
+          <style dangerouslySetInnerHTML={{ __html: `
+            @keyframes defenseGlow {
+              0%, 100% {
+                box-shadow: 0 0 20px 4px rgba(218, 41, 28, 0.4), inset 0 0 12px 2px rgba(218, 41, 28, 0.3);
+              }
+              50% {
+                box-shadow: 0 0 35px 8px rgba(218, 41, 28, 0.6), inset 0 0 20px 4px rgba(218, 41, 28, 0.45);
+              }
+            }
+            .btn-defense {
+              background-color: #0A0A0A;
+              border: 1px solid #DA291C;
+              animation: defenseGlow 3.5s ease-in-out infinite;
+              transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            }
+            .btn-defense:hover {
+              background-color: #DA291C;
+              border-color: #DA291C;
+              box-shadow: 0 0 45px 12px rgba(218, 41, 28, 0.7);
+              transform: scale(1.02);
+            }
+          `}} />
+
+          <a 
+            href="https://www.terraindesk.com/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn-defense text-white px-6 py-2.5 text-sm font-semibold rounded-none inline-block text-center"
+          >
+            Open Terrain Desk
           </a>
 
           <button 
