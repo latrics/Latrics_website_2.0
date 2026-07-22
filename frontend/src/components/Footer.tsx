@@ -25,11 +25,8 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Desktop Spacer - Creates the scrollable space to reveal the fixed footer underneath */}
-      <div className="hidden md:block h-screen w-full pointer-events-none" aria-hidden="true" />
-
-      {/* The Reveal Footer - Fixed on desktop for curtain effect, relative on mobile for normal scrolling */}
-      <footer id="demo-section" className="relative md:fixed md:bottom-0 md:left-0 w-full min-h-screen bg-[#111111] text-white flex flex-col font-sans md:-z-10">
+      {/* Footer */}
+      <footer id="demo-section" className="relative w-full min-h-screen bg-[#111111] text-white flex flex-col font-sans">
 
         {/* Top Grid Area */}
         <div className="flex-1 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 border-b border-white/10">
@@ -68,12 +65,11 @@ export default function Footer() {
               Company
             </h4>
             <ul className="space-y-4 text-white/90 text-sm font-medium mb-12">
-              <li><Link href="#" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">What We Do</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Case Studies</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Newsroom</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Careers</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Contact Us</Link></li>
+              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
+              <li><Link href="/products/licopter-p720" className="hover:text-white transition-colors">Products</Link></li>
+              <li><Link href="/case-studies" className="hover:text-white transition-colors">Case Studies</Link></li>
+              <li><Link href="/partners" className="hover:text-white transition-colors">Partners</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
             </ul>
 
             <h4 className="text-white/70 text-xs font-semibold tracking-[0.2em] uppercase mb-6">
