@@ -148,12 +148,23 @@ function IndustryCard({ ind, index }: { ind: any, index: number }) {
 
 export default function IndustriesSection() {
   return (
-    <SectionLayout number="03 / INDUSTRIES WE SERVE" title="Six sectors served">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full border-l-0 md:border-l border-gray-200">
-        {industries.map((ind, i) => (
-          <IndustryCard key={i} ind={ind} index={i} />
-        ))}
+    <div className="w-full py-24 bg-white border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-8 lg:px-12">
+        <div className="flex flex-col items-center text-center mb-12">
+          <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
+            INDUSTRIES WE SERVE
+          </h3>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight">
+            Six sectors served
+          </h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full border border-gray-200">
+          {industries.map((ind, i) => (
+            <IndustryCard key={i} ind={ind} index={i} />
+          ))}
+        </div>
       </div>
-    </SectionLayout>
+    </div>
   );
 }
