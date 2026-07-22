@@ -7,19 +7,24 @@ export default function Hero() {
   return (
     <section className="relative h-[100dvh] flex items-center bg-black overflow-hidden pt-20">
       {/* Background Video */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center">
+      <div className="absolute inset-0 z-0 flex justify-end">
         {/* Gradients for readability */}
-        <div className="w-full h-full bg-gradient-to-r from-black/80 via-black/30 to-transparent absolute z-10 pointer-events-none" />
+        <div className="w-full h-full bg-gradient-to-r from-black via-black/50 to-transparent absolute z-10 pointer-events-none" />
         <div className="w-full h-full bg-gradient-to-t from-black/40 to-transparent absolute z-10 pointer-events-none" />
 
-        <video
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none -scale-x-100 opacity-90"
-          src="/assets/globe_india_v5.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
+        <div 
+          className="absolute inset-y-0 right-0 w-full md:w-[60%] h-full pointer-events-none opacity-90"
+          style={{ WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 20%)', maskImage: 'linear-gradient(to right, transparent 0%, black 20%)' }}
+        >
+          <video
+            className="w-full h-full object-cover -scale-x-100"
+            src="/assets/globe_india_v5.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        </div>
       </div>
 
       {/* Content */}
