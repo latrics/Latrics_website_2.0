@@ -1,14 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import SectionLayout from "../SectionLayout";
 
 const industries = [
   {
-    imageSubtitle: "OPEN-PIT MINE",
+    tag: "OPEN-PIT MINE",
     title: "Mining",
     desc: "STOCKPILE • PIT PROGRESSION",
-    bg: "bg-[#0a0a0a]",
+    fileName: "Open-pit mine — elevation scan",
     images: [
       "/assets/Mines.png",
       "/assets/Mines1.png",
@@ -21,10 +20,10 @@ const industries = [
     ]
   },
   {
-    imageSubtitle: "HIGHWAY CORRIDOR",
+    tag: "HIGHWAY CORRIDOR",
     title: "Highways & Rail",
     desc: "CORRIDOR • EARTHWORK",
-    bg: "bg-[#251e1a]",
+    fileName: "Highway corridor — LiDAR point cloud",
     images: [
       "/assets/Highway.png",
       "/assets/Highway1.png",
@@ -36,10 +35,10 @@ const industries = [
     ]
   },
   {
-    imageSubtitle: "CITY SKYLINE",
-    title: "Urban development",
+    tag: "CITY SKYLINE",
+    title: "Urban Development",
     desc: "BASE MAPS • LAND USE",
-    bg: "bg-[#181818]",
+    fileName: "City skyline — aerial base map",
     images: [
       "/assets/1.png",
       "/assets/2.png",
@@ -47,17 +46,17 @@ const industries = [
     ]
   },
   {
-    imageSubtitle: "SOLAR FARM",
-    title: "Energy & Utilities",
-    desc: "SOLAR • TRANSMISSION",
-    bg: "bg-[#2c241c]",
+    tag: "TRANSMISSION LINE",
+    title: "Power & Utilities",
+    desc: "CORRIDOR THERMAL • VEGETATION",
+    fileName: "Transmission line — thermal survey",
     video: "/assets/energy_vid.MP4",
   },
   {
-    imageSubtitle: "RESERVOIR",
-    title: "Water resources",
-    desc: "DAMS • WATERSHED",
-    bg: "bg-[#1f211c]",
+    tag: "FOREST CANOPY",
+    title: "Forestry",
+    desc: "CANOPY HEIGHT • BIOMASS",
+    fileName: "Forest canopy — 3D point cloud",
     images: [
       "/assets/CONTOUR.png",
       "/assets/DSM_OV.png",
@@ -72,10 +71,10 @@ const industries = [
     ]
   },
   {
-    imageSubtitle: "FLOOD RESPONSE",
-    title: "Emergency services",
-    desc: "FLOOD • DISASTER MAPPING",
-    bg: "bg-[#261c18]",
+    tag: "RIVER DELTA",
+    title: "Water & Flood Risk",
+    desc: "WATERSHED • INUNDATION",
+    fileName: "River delta — flood risk mapping",
     images: [
       "/assets/emergency1.png",
       "/assets/emergency2.png",
@@ -83,10 +82,10 @@ const industries = [
       "/assets/emergency4.png",
       "/assets/emergency5.png"
     ]
-  },
+  }
 ];
 
-function IndustryCard({ ind, index }: { ind: any, index: number }) {
+function IndustryCard({ ind }: { ind: typeof industries[0] }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -94,16 +93,16 @@ function IndustryCard({ ind, index }: { ind: any, index: number }) {
     
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % ind.images.length);
-    }, 3000); // 3 seconds per image
+    }, 3000);
     
     return () => clearInterval(interval);
   }, [ind.images]);
 
-  const borderClass = `flex flex-col border-b border-gray-200 ${(index + 1) % 3 !== 0 ? 'lg:border-r' : ''} ${(index + 1) % 2 !== 0 ? 'md:border-r lg:border-r-0' : 'lg:border-r'} lg:[&:nth-child(3n)]:border-r-0`;
-
   return (
-    <div className={borderClass}>
-      <div className={`w-full aspect-[4/3] ${ind.bg} relative flex items-end p-6 overflow-hidden`}>
+    <div className="flex flex-col bg-white">
+      {/* Media area */}
+      <div className="w-full aspect-[4/3] bg-[#f8f8f8] flex flex-col items-center justify-center relative overflow-hidden border border-gray-200">
+        
         {ind.images ? (
           <AnimatePresence mode="popLayout">
             <motion.img
@@ -126,21 +125,33 @@ function IndustryCard({ ind, index }: { ind: any, index: number }) {
             playsInline
             className="absolute inset-0 w-full h-full object-cover z-0"
           />
-        ) : null}
-        
-        {/* Overlay for text readability if there's an image or video */}
-        {(ind.images || ind.video) && (
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-0 pointer-events-none" />
+        ) : (
+          <div className="flex flex-col items-center text-center gap-2 z-10">
+            <svg className="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <p className="text-sm font-semibold text-gray-700">{ind.fileName}</p>
+            <p className="text-xs text-gray-500">
+              or <span className="underline cursor-pointer hover:text-gray-700">browse files</span>
+            </p>
+          </div>
         )}
-        
-        <span className="text-gray-200 text-[10px] md:text-xs font-semibold tracking-widest uppercase relative z-10">
-          {ind.imageSubtitle}
-        </span>
+
+        {/* Overlay for text readability (only if media is present) */}
+        {(ind.images || ind.video) && (
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-0 pointer-events-none opacity-50" />
+        )}
+
+        {/* Tag at bottom left */}
+        <div className="absolute bottom-0 left-0 bg-black/80 backdrop-blur-md text-white px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider z-10">
+          {ind.tag}
+        </div>
       </div>
-      {/* Content */}
-      <div className="p-6 bg-white flex-1">
-        <h3 className="text-lg font-bold text-brand-charcoal mb-1">{ind.title}</h3>
-        <p className="text-brand-olive text-[10px] md:text-xs font-semibold tracking-widest uppercase">{ind.desc}</p>
+      
+      {/* Bottom text content */}
+      <div className="pt-6 pb-4">
+        <h3 className="text-2xl font-black text-black mb-2">{ind.title}</h3>
+        <p className="text-[#da291c] text-[10px] md:text-xs font-bold tracking-[0.15em] uppercase">{ind.desc}</p>
       </div>
     </div>
   );
@@ -150,18 +161,21 @@ export default function IndustriesSection() {
   return (
     <div className="w-full py-24 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-8 lg:px-12">
-        <div className="flex flex-col items-center text-center mb-12">
-          <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
+        <div className="flex flex-col items-center text-center mb-16">
+          <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-6">
             INDUSTRIES WE SERVE
           </h3>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight">
-            Six sectors served
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-[1.15] max-w-5xl mx-auto mb-6 text-balance">
+            Six industries where <span className="text-[#da291c]">Latrics is already reshaping</span> how the ground gets read
           </h2>
+          <p className="text-gray-500 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            From open-pit mines to river deltas, Latrics turns raw elevation and imagery into decisions your team can act on the same day.
+          </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full border border-gray-200">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 w-full">
           {industries.map((ind, i) => (
-            <IndustryCard key={i} ind={ind} index={i} />
+            <IndustryCard key={i} ind={ind} />
           ))}
         </div>
       </div>
