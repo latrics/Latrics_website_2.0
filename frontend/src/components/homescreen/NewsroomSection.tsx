@@ -7,7 +7,7 @@ const newsItems = [
     date: "MAY 2026",
     tag: "AP DRONE CITY INITIATIVE",
     headline: "Latrics Receives Land Allocation to Contribute to Andhra Pradesh Drone City Vision",
-    description: "LiCopter P720 deployment and R&D facility established in Kurnool under the AP Drone City initiative, inaugurated in Puttaparthi in the presence of Defence Minister Shri Rajnath তৎকালীন and AP Chief Minister Shri Nara Chandrababu Naidu. Delivering precision LiDAR mapping for smart infrastructure, defense readiness, and critical corridor surveying — advancing India's sovereign autonomous ecosystem.",
+    description: "LiCopter P720 deployment and R&D facility established in Kurnool under the AP Drone City initiative, inaugurated in Puttaparthi in the presence of Defence Minister Shri Rajnath Singh and AP Chief Minister Shri Nara Chandrababu Naidu. Delivering precision LiDAR mapping for smart infrastructure, defense readiness, and critical corridor surveying — advancing India's sovereign autonomous ecosystem.",
     image: "/assets/landAllocation_highlights.jpg"
   },
   {
