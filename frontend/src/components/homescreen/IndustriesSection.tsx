@@ -54,7 +54,7 @@ const industries = [
   },
   {
     tag: "FOREST CANOPY",
-    title: "Forestry",
+    title: "Water resources",
     desc: "CANOPY HEIGHT • BIOMASS",
     fileName: "Forest canopy — 3D point cloud",
     images: [
@@ -72,7 +72,7 @@ const industries = [
   },
   {
     tag: "RIVER DELTA",
-    title: "Water & Flood Risk",
+    title: "Emergency services",
     desc: "WATERSHED • INUNDATION",
     fileName: "River delta — flood risk mapping",
     images: [
@@ -149,7 +149,7 @@ function IndustryCard({ ind }: { ind: typeof industries[0] }) {
       </div>
       
       {/* Bottom text content */}
-      <div className="pt-6 pb-4">
+      <div className="p-6 border border-t-0 border-gray-200">
         <h3 className="text-2xl font-black text-black mb-2">{ind.title}</h3>
         <p className="text-[#da291c] text-[10px] md:text-xs font-bold tracking-[0.15em] uppercase">{ind.desc}</p>
       </div>
