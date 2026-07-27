@@ -6,13 +6,17 @@ import SectionLayout from "../SectionLayout";
 export default function CaseStudiesSection() {
   return (
     <div className="w-full py-24 bg-white border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-8 lg:px-12">
-        <div className="flex flex-col items-center text-center mb-12">
+      <div className="max-w-7xl mx-auto px-8 lg:px-12 relative">
+        {/* Glow effects on sides */}
+        <div className="absolute top-20 -left-[200px] md:-left-[300px] w-[600px] h-[600px] bg-[#da291c]/10 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute top-20 -right-[200px] md:-right-[300px] w-[600px] h-[600px] bg-[#da291c]/10 blur-[150px] rounded-full pointer-events-none" />
+        
+        <div className="flex flex-col items-center text-center mb-12 relative z-10">
           <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
             IN THE FIELD
           </h3>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight mb-6">
-            Case studies
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-gray-900 tracking-tight leading-[1.1] max-w-5xl mx-auto mb-6 text-balance">
+            Different terrain, same <span className="text-[#da291c]">Latrics precision</span> — see it hold up on the ground
           </h2>
           
           <p className="text-gray-500 text-lg leading-relaxed max-w-3xl">
