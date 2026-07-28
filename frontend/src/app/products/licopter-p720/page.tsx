@@ -8,7 +8,6 @@ import FlightWorkflow from "@/components/products/licopter-p720/FlightWorkflow";
 import PerformanceBanner from "@/components/products/licopter-p720/PerformanceBanner";
 import GallerySection from "@/components/products/licopter-p720/GallerySection";
 import ModularPayloads from "@/components/products/licopter-p720/ModularPayloads";
-import DownloadsStrip from "@/components/products/licopter-p720/DownloadsStrip";
 import FaqSection from "@/components/products/licopter-p720/FaqSection";
 import BottomCtaBanner from "@/components/products/licopter-p720/BottomCtaBanner";
 import RelatedProducts from "@/components/products/licopter-p720/RelatedProducts";
@@ -28,7 +27,6 @@ export default function LiCopterPage() {
       <PerformanceBanner />
       <GallerySection />
       <ModularPayloads />
-      <DownloadsStrip />
       <FaqSection />
       <BottomCtaBanner />
       <RelatedProducts />

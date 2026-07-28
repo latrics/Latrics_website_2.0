@@ -36,8 +36,8 @@ export default function IndustryApplications() {
   ];
 
   return (
-    <div id="applications" className="w-full py-24 bg-[#fafafa]">
-      <div className="max-w-7xl mx-auto px-8 lg:px-12">
+    <div id="applications" className="w-full py-16 bg-[#fafafa]">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
         
         <div className="text-center max-w-7xl mx-auto mb-16">
           <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
@@ -48,9 +48,9 @@ export default function IndustryApplications() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 border border-gray-200 shadow-sm">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {sectors.map((sector, idx) => (
-            <div key={idx} className="bg-white flex flex-col group cursor-pointer">
+            <div key={idx} className="bg-white flex flex-col group cursor-pointer border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
               <div className="w-full aspect-[4/3] relative overflow-hidden">
                 <Image src={sector.image as string} alt={sector.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>

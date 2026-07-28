@@ -21,7 +21,7 @@ export default function ProductHero() {
       <div className="absolute bottom-0 left-0 w-full h-32 z-10 bg-gradient-to-t from-black via-black/90 to-transparent pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-8 lg:px-12 pt-20">
+      <div className="relative z-20 w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 pt-20">
         <div className="max-w-3xl">
           <div className="flex items-center gap-4 mb-4">
             <span className="text-[#da291c] text-[10px] font-bold uppercase tracking-widest">

@@ -70,8 +70,8 @@ export default function FlightWorkflow() {
   ];
 
   return (
-    <div className="w-full py-24 bg-white border-t border-gray-100">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+    <div className="w-full py-16 bg-white border-t border-gray-100">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
         
         {/* Header Section */}
         <div className="text-center max-w-4xl mx-auto mb-16">

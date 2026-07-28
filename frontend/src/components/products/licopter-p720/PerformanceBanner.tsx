@@ -22,7 +22,7 @@ export default function PerformanceBanner() {
   ];
 
   return (
-    <div className="relative w-full py-24 bg-[#fafafa] overflow-hidden border-y border-gray-200">
+    <div className="relative w-full py-16 bg-[#fafafa] overflow-hidden border-y border-gray-200">
       {/* Topo Map Background Overlay */}
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
         <Image 
@@ -33,22 +33,22 @@ export default function PerformanceBanner() {
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-8 lg:px-12 text-center">
+      <div className="relative z-10 max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
         
         <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
           Performance & Accuracy
         </h3>
-        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight mb-16">
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight mb-10">
           Numbers that hold up in the field
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-gray-200 bg-white shadow-sm">
           {stats.map((stat, idx) => (
-            <div key={idx} className="flex flex-col items-center">
-              <div className="text-4xl md:text-5xl font-black text-gray-900 mb-3 tracking-tighter">
+            <div key={idx} className="flex flex-col items-start justify-center p-8 border-r border-b border-gray-200">
+              <div className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tighter">
                 {stat.value}
               </div>
-              <div className="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-500">
+              <div className="text-[10px] font-bold tracking-[0.15em] uppercase text-gray-500">
                 {stat.label}
               </div>
             </div>

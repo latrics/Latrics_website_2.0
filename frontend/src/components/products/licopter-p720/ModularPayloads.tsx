@@ -21,8 +21,8 @@ export default function ModularPayloads() {
   ];
 
   return (
-    <div className="w-full py-24 bg-[#fafafa]">
-      <div className="max-w-7xl mx-auto px-8 lg:px-12">
+    <div className="w-full py-16 bg-[#fafafa]">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
