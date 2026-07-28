@@ -103,7 +103,7 @@ export default function VerticalsSection() {
         </AnimatePresence>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-8 w-full flex flex-col md:flex-row items-center justify-between min-h-[calc(100vh-5rem)]">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between min-h-[calc(100vh-5rem)]">
 
         {/* Left Content Area */}
         <div className="max-w-2xl mt-20 md:mt-0 flex flex-col justify-center">

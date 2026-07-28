@@ -5,21 +5,21 @@ export default function Footer() {
   return (
     <>
       {/* Top CTA Strip (Channel Partner Program) - This stays in normal flow to act as the "curtain" */}
-      <div className="bg-[#cfcfcf] relative z-10 border-b border-[#111111]/20">
+      <div className="bg-[#da291c] relative z-10 border-b border-[#111111]/20">
         <div className="max-w-7xl mx-auto p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="max-w-2xl">
-            <p className="text-[#e03020] text-xs font-bold tracking-widest uppercase mb-2">CHANNEL PARTNER PROGRAM</p>
-            <h2 className="text-3xl font-bold text-[#111111] mb-3 leading-tight">Grow your business with Latrics</h2>
-            <p className="text-gray-700 text-base font-medium">
+            <p className="text-white text-xs font-bold tracking-widest uppercase mb-2">CHANNEL PARTNER PROGRAM</p>
+            <h2 className="text-3xl font-bold text-white mb-3 leading-tight">Grow your business with Latrics</h2>
+            <p className="text-white text-base font-medium">
               Resell, integrate, or deliver our drone, LiDAR, and Terrain Desk platform — backed by training, marketing, and technical support.
             </p>
           </div>
           <div className="shrink-0">
             <Link
               href="/partners"
-              className="bg-[#e03020] text-white px-8 py-3.5 text-sm font-semibold hover:bg-red-700 transition-colors inline-block"
+              className="bg-white text-[#da291c] px-8 py-3.5 text-sm font-semibold hover:bg-gray-100 transition-colors inline-block"
             >
-              Become a partner &rarr;
+              Become partner
             </Link>
           </div>
         </div>

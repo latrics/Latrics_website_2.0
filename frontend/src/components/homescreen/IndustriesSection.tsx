@@ -99,59 +99,40 @@ function IndustryCard({ ind }: { ind: typeof industries[0] }) {
   }, [ind.images]);
 
   return (
-    <div className="flex flex-col bg-white">
+    <div className="w-full aspect-[4/3] bg-[#111111] flex flex-col justify-end relative overflow-hidden group cursor-pointer border border-white/10">
       {/* Media area */}
-      <div className="w-full aspect-[4/3] bg-[#f8f8f8] flex flex-col items-center justify-center relative overflow-hidden border border-gray-200">
-        
-        {ind.images ? (
-          <AnimatePresence mode="popLayout">
-            <motion.img
-              key={currentImageIndex}
-              src={ind.images[currentImageIndex]}
-              alt={`${ind.title} - ${currentImageIndex}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-              className="absolute inset-0 w-full h-full object-cover z-0"
-            />
-          </AnimatePresence>
-        ) : ind.video ? (
-          <video
-            src={ind.video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover z-0"
+      {ind.images ? (
+        <AnimatePresence mode="popLayout">
+          <motion.img
+            key={currentImageIndex}
+            src={ind.images[currentImageIndex]}
+            alt={`${ind.title} - ${currentImageIndex}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-105 transition-transform duration-700"
           />
-        ) : (
-          <div className="flex flex-col items-center text-center gap-2 z-10">
-            <svg className="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <p className="text-sm font-semibold text-gray-700">{ind.fileName}</p>
-            <p className="text-xs text-gray-500">
-              or <span className="underline cursor-pointer hover:text-gray-700">browse files</span>
-            </p>
-          </div>
-        )}
+        </AnimatePresence>
+      ) : ind.video ? (
+        <video
+          src={ind.video}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-105 transition-transform duration-700"
+        />
+      ) : null}
 
-        {/* Overlay for text readability (only if media is present) */}
-        {(ind.images || ind.video) && (
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-0 pointer-events-none opacity-50" />
-        )}
+      {/* Overlay gradient for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10 pointer-events-none" />
 
-        {/* Tag at bottom left */}
-        <div className="absolute bottom-0 left-0 bg-black/80 backdrop-blur-md text-white px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider z-10">
-          {ind.tag}
-        </div>
-      </div>
-      
-      {/* Bottom text content */}
-      <div className="p-6 border border-t-0 border-gray-200">
-        <h3 className="text-2xl font-black text-black mb-2">{ind.title}</h3>
-        <p className="text-[#da291c] text-[10px] md:text-xs font-bold tracking-[0.15em] uppercase">{ind.desc}</p>
+      {/* Bottom text content overlay */}
+      <div className="relative z-20 p-6 flex flex-col">
+        <p className="text-gray-400 text-[10px] md:text-xs font-bold tracking-widest uppercase mb-1">{ind.tag}</p>
+        <h3 className="text-2xl font-bold text-white mb-1">{ind.title}</h3>
+        <p className="text-[#da291c] text-[10px] md:text-xs font-bold tracking-widest uppercase">{ind.desc}</p>
       </div>
     </div>
   );
@@ -159,25 +140,27 @@ function IndustryCard({ ind }: { ind: typeof industries[0] }) {
 
 export default function IndustriesSection() {
   return (
-    <div className="w-full py-24 bg-white border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-8 lg:px-12 relative">
+    <div className="w-full py-16 bg-white border-t border-gray-100">
+      <div className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 relative">
         {/* Glow effects on sides */}
         <div className="absolute top-20 -left-[200px] md:-left-[300px] w-[600px] h-[600px] bg-[#da291c]/10 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute top-20 -right-[200px] md:-right-[300px] w-[600px] h-[600px] bg-[#da291c]/10 blur-[150px] rounded-full pointer-events-none" />
         
-        <div className="flex flex-col items-center text-center mb-16 relative z-10">
-          <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-6">
-            INDUSTRIES WE SERVE
-          </h3>
-          <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-gray-900 tracking-tight leading-[1.1] max-w-5xl mx-auto mb-6 text-balance">
-            Six industries where <span className="text-[#da291c]">Latrics is already reshaping</span> how the ground gets read
-          </h2>
-          <p className="text-gray-500 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 relative z-10 gap-8">
+          <div className="flex flex-col text-left">
+            <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
+              INDUSTRIES WE SERVE
+            </h3>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight leading-[1.1] max-w-2xl">
+              Six industries where Latrics is already reshaping how the ground gets read
+            </h2>
+          </div>
+          <p className="text-gray-500 text-sm md:text-base max-w-md leading-relaxed text-left md:pb-2">
             From open-pit mines to river deltas, Latrics turns raw elevation and imagery into decisions your team can act on the same day.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 w-full bg-gray-200 border border-gray-200 p-1">
           {industries.map((ind, i) => (
             <IndustryCard key={i} ind={ind} />
           ))}
