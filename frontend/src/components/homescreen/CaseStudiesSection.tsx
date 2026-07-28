@@ -6,7 +6,7 @@ import SectionLayout from "../SectionLayout";
 export default function CaseStudiesSection() {
   return (
     <div className="w-full py-16 bg-white border-t border-gray-100">
-      <div className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 relative">
+      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative">
         {/* Glow effects on sides */}
         <div className="absolute top-20 -left-[200px] md:-left-[300px] w-[600px] h-[600px] bg-[#da291c]/10 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute top-20 -right-[200px] md:-right-[300px] w-[600px] h-[600px] bg-[#da291c]/10 blur-[150px] rounded-full pointer-events-none" />
@@ -25,10 +25,10 @@ export default function CaseStudiesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 w-full bg-gray-200 border border-gray-200 p-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 w-full">
           
           {/* Case Study 1 */}
-          <div className="flex flex-col bg-white">
+          <div className="flex flex-col bg-white border border-gray-100 rounded-sm overflow-hidden hover:shadow-md transition-shadow">
             <div className="w-full aspect-[4/3] bg-gray-900 relative flex items-end overflow-hidden group cursor-pointer">
               <Image src="/assets/Highway.png" alt="Highway mapping" fill className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
             </div>
@@ -49,7 +49,7 @@ export default function CaseStudiesSection() {
           </div>
           
           {/* Case Study 2 */}
-          <div className="flex flex-col bg-white">
+          <div className="flex flex-col bg-white border border-gray-100 rounded-sm overflow-hidden hover:shadow-md transition-shadow">
             <div className="w-full aspect-[4/3] bg-gray-900 relative flex items-end overflow-hidden group cursor-pointer">
               <Image src="/assets/WATER1.png" alt="Flood response mapping" fill className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
             </div>
@@ -70,7 +70,7 @@ export default function CaseStudiesSection() {
           </div>
 
           {/* Case Study 3 */}
-          <div className="flex flex-col bg-white">
+          <div className="flex flex-col bg-white border border-gray-100 rounded-sm overflow-hidden hover:shadow-md transition-shadow">
             <div className="w-full aspect-[4/3] bg-gray-900 relative flex items-end overflow-hidden group cursor-pointer">
               <Image src="/assets/Mines.png" alt="Mining volumetric analysis" fill className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
             </div>
@@ -91,7 +91,7 @@ export default function CaseStudiesSection() {
           </div>
 
           {/* Case Study 4 */}
-          <div className="flex flex-col bg-white">
+          <div className="flex flex-col bg-white border border-gray-100 rounded-sm overflow-hidden hover:shadow-md transition-shadow">
             <div className="w-full aspect-[4/3] bg-gray-900 relative flex items-end overflow-hidden group cursor-pointer">
               <Image src="/assets/energy_1.png" alt="Energy sector inspection" fill className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
             </div>

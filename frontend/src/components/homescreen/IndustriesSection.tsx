@@ -141,7 +141,7 @@ function IndustryCard({ ind }: { ind: typeof industries[0] }) {
 export default function IndustriesSection() {
   return (
     <div className="w-full py-16 bg-white border-t border-gray-100">
-      <div className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 relative">
+      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative">
         {/* Glow effects on sides */}
         <div className="absolute top-20 -left-[200px] md:-left-[300px] w-[600px] h-[600px] bg-[#da291c]/10 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute top-20 -right-[200px] md:-right-[300px] w-[600px] h-[600px] bg-[#da291c]/10 blur-[150px] rounded-full pointer-events-none" />

@@ -39,7 +39,7 @@ export default function NewsroomSection() {
 
   return (
     <div className="w-full py-16 bg-white border-t border-gray-100">
-      <div className="w-full max-w-[1600px] mx-auto px-6 lg:px-12">
+      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
         <div className="flex flex-col text-left mb-12">
           <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
             NEWSROOM
