@@ -23,33 +23,33 @@ export default function ProductOverview() {
 
             <div className="grid grid-cols-3 border-t border-l border-gray-200 w-full max-w-lg">
               <div className="p-4 md:p-6 border-b border-r border-gray-200 flex flex-col justify-center bg-[#fafafa]">
-                <div className="text-gray-900 text-xl md:text-2xl font-black mb-1 whitespace-nowrap">45+ min</div>
+                <div className="text-[#da291c] text-xl md:text-2xl font-black mb-1 whitespace-nowrap">45+ min</div>
                 <div className="text-gray-400 text-[9px] font-bold tracking-[0.15em] uppercase whitespace-nowrap">Endurance</div>
               </div>
               <div className="p-4 md:p-6 border-b border-r border-gray-200 flex flex-col justify-center bg-[#fafafa]">
-                <div className="text-gray-900 text-xl md:text-2xl font-black mb-1 whitespace-nowrap">Foldable</div>
+                <div className="text-[#da291c] text-xl md:text-2xl font-black mb-1 whitespace-nowrap">Foldable</div>
                 <div className="text-gray-400 text-[9px] font-bold tracking-[0.15em] uppercase whitespace-nowrap">Design</div>
               </div>
               <div className="p-4 md:p-6 border-b border-r border-gray-200 flex flex-col justify-center bg-[#fafafa]">
-                <div className="text-gray-900 text-xl md:text-2xl font-black mb-1 whitespace-nowrap">All-Terrain</div>
+                <div className="text-[#da291c] text-xl md:text-2xl font-black mb-1 whitespace-nowrap">All-Terrain</div>
                 <div className="text-gray-400 text-[9px] font-bold tracking-[0.15em] uppercase whitespace-nowrap">Flight Capability</div>
               </div>
             </div>
           </div>
 
           {/* Right: Image */}
-          <div className="relative w-full lg:w-1/2 aspect-square max-h-[600px] border border-gray-200 p-2 order-1 lg:order-2">
-            <Image src="/assets/product_overview_drone720.jpg" alt="LiCopter P720 drone" fill className="object-cover" />
+          <div className="relative w-full lg:w-1/2 aspect-square max-h-[600px] order-1 lg:order-2 overflow-hidden">
+            <Image src="/assets/product_overview_drone720.jpg" alt="LiCopter P720 drone" fill className="object-cover mix-blend-multiply scale-125" />
           </div>
 
         </div>
       </div>
 
       {/* Second Block: Field Ready - Full Width Banner */}
-      <div className="relative w-full py-24 mt-20 flex items-center justify-start overflow-hidden border-t border-gray-200">
+      <div className="relative w-full py-24 mt-20 min-h-[500px] flex items-center justify-start overflow-hidden border-t border-gray-200">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <Image src="/assets/aerospace_1.jpeg" alt="Field ready durability background" fill className="object-cover" />
+          <Image src="/assets/aerospace_1.jpeg" alt="Field ready durability background" fill className="object-cover object-right" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30"></div>
         </div>
 

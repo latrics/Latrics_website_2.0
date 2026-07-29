@@ -84,7 +84,10 @@ export default function KeyHighlights() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-gray-200">
           {highlights.map((item, index) => (
             <div key={index} className="bg-[#fafafa] p-8 border-r border-b border-gray-200 flex flex-col items-start hover:bg-white transition-colors duration-300">
-              <h4 className="text-[10px] font-bold text-[#da291c] tracking-[0.15em] uppercase mb-4">
+              <div className="text-[#da291c] mb-4">
+                {item.icon}
+              </div>
+              <h4 className="text-sm font-black text-[#da291c] tracking-widest uppercase mb-3">
                 {item.title}
               </h4>
               <p className="text-gray-500 text-sm leading-relaxed font-medium">
