@@ -28,7 +28,7 @@ const reasons = [
 export default function WhyPartnerSection() {
   return (
     <SectionLayout 
-      number="01 / WHY PARTNER" 
+      number="WHY PARTNER" 
       title="" 
       subtitle="Four reasons partners choose Latrics."
     >

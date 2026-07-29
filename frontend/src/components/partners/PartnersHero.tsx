@@ -21,22 +21,22 @@ export default function PartnersHero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
         <div className="max-w-4xl">
-          <p className="text-brand-red text-xs md:text-sm font-heading font-semibold tracking-widest uppercase mb-6">
+          <p className="text-white text-xs md:text-sm font-heading font-semibold tracking-widest uppercase mb-6 drop-shadow-md">
             LATRICS CHANNEL PARTNER PROGRAM
           </p>
           
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight font-sans">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight font-sans drop-shadow-md">
             Grow your business with <br />
             autonomous geospatial intelligence
           </h1>
           
-          <p className="text-brand-olive text-lg md:text-xl mb-10 max-w-2xl leading-relaxed">
+          <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl leading-relaxed drop-shadow-md">
             Resell, integrate, or deliver Latrics' drone, LiDAR, and Terrain Desk platform — backed by training, marketing, and technical support.
           </p>
           
           <button 
             onClick={scrollToForm}
-            className="bg-[#da291c] border border-transparent text-white px-8 py-4 text-sm font-semibold hover:bg-red-700 transition-colors shadow-sm"
+            className="bg-white border border-transparent text-[#da291c] px-8 py-4 text-sm font-semibold hover:bg-gray-100 transition-colors shadow-sm"
           >
             Apply to become a partner &darr;
           </button>

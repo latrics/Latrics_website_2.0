@@ -26,7 +26,7 @@ export default function ApplyFormSection() {
   return (
     <div id="apply-form">
       <SectionLayout 
-        number="03 / APPLY" 
+        number="APPLY" 
         title="" 
         subtitle=""
       >

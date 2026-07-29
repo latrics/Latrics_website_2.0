@@ -22,7 +22,7 @@ const tiers = [
 export default function PartnerTiersSection() {
   return (
     <SectionLayout 
-      number="02 / PARTNER TIERS" 
+      number="PARTNER TIERS" 
       title="" 
       subtitle="Three ways to work with us."
     >

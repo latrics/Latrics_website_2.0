@@ -19,7 +19,7 @@ const faqs = [
 export default function FaqSection() {
   return (
     <SectionLayout 
-      number="05 / FAQ" 
+      number="FAQ" 
       title="" 
       subtitle=""
     >
