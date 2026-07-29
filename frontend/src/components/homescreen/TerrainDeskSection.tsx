@@ -26,9 +26,9 @@ export default function TerrainDeskSection() {
             </h3>
 
             <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-gray-900 tracking-tight leading-[1.1] max-w-2xl">
-              Every square metre of India,<br className="hidden md:block" />
-              mapped with survey-grade<br className="hidden md:block" />
-              precision
+              Every square metre of<br />
+              India, mapped with <br />
+              <span className="text-[#da291c]">survey-grade precision</span>
             </h2>
 
             <p className="text-gray-500 text-lg md:text-xl max-w-xl mt-8 leading-relaxed">
