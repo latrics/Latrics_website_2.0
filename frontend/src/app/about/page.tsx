@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import TypewriterText from '@/components/TypewriterText';
+import Image from 'next/image';
 
 export default function AboutPage() {
   return (
@@ -120,12 +121,12 @@ export default function AboutPage() {
               <div className="lg:w-1/2">
                 <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">LEADERSHIP</h3>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight leading-tight">
-                  The engineer behind the platform
+                  The founder behind the platform
                 </h2>
               </div>
               <div className="lg:w-1/3">
                 <p className="text-gray-500 leading-relaxed pt-2">
-                  Latrics is led from the field. Two decades of aerospace and survey work shape how the hardware, the pipeline, and the deliverables are designed.
+                  Latrics is led from the field. Fifteen years of building ventures shape how the hardware, the pipeline, and the deliverables are designed.
                 </p>
               </div>
             </div>
@@ -133,38 +134,34 @@ export default function AboutPage() {
             {/* Content Box */}
             <div className="flex flex-col lg:flex-row border border-gray-200">
               {/* Photo Area */}
-              <div className="lg:w-1/3 bg-[#ececec] flex flex-col items-center justify-center text-center p-16 min-h-[400px]">
-                <div className="w-12 h-12 mb-3 opacity-20">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-                </div>
-                <p className="text-sm font-semibold text-gray-600">Drop director photo</p>
-                <p className="text-xs text-gray-500 underline">or browse files</p>
+              <div className="lg:w-1/3 relative bg-[#ececec] flex flex-col items-center justify-center text-center min-h-[400px]">
+                <Image src="/assets/Balaji_nagrajan.png" alt="Balaji Nagarajan" fill className="object-cover" />
               </div>
               
               {/* Bio Area */}
               <div className="lg:w-2/3 p-10 lg:p-16 flex flex-col justify-center">
-                <p className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">DIRECTOR & FOUNDER</p>
-                <h3 className="text-4xl font-bold text-gray-900 mb-2">Rahul Verma</h3>
-                <p className="text-gray-500 mb-10">Aerospace engineer · 18 years in UAV systems & geospatial survey</p>
+                <p className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">MANAGING DIRECTOR</p>
+                <h3 className="text-4xl font-bold text-gray-900 mb-2">Balaji Nagarajan</h3>
+                <p className="text-gray-500 mb-10">Serial Entrepreneur · 15+ Years Experience</p>
                 
                 <blockquote className="border-l-2 border-[#da291c] pl-6 py-2 mb-16">
                   <p className="text-2xl font-semibold text-gray-900 leading-snug">
-                    "If you can measure the ground honestly, everything built on top of it gets easier."
+                    "Visionary behind India's next-generation autonomous aerial infrastructure."
                   </p>
                 </blockquote>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div>
-                    <p className="text-3xl font-bold text-gray-900 mb-2">18+</p>
-                    <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">YEARS IN AEROSPACE</p>
+                    <p className="text-3xl font-bold text-gray-900 mb-2">15+</p>
+                    <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">YEARS EXPERIENCE</p>
                   </div>
                   <div>
                     <p className="text-3xl font-bold text-gray-900 mb-2">40+</p>
                     <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">SURVEY PROGRAMS LED</p>
                   </div>
                   <div>
-                    <p className="text-3xl font-bold text-gray-900 mb-2">IIT</p>
-                    <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">M.TECH, AVIONICS</p>
+                    <p className="text-3xl font-bold text-gray-900 mb-2">MD</p>
+                    <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">SERIAL ENTREPRENEUR</p>
                   </div>
                 </div>
               </div>
