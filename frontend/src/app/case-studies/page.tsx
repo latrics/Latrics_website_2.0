@@ -10,39 +10,42 @@ export default function SchoolCampusCaseStudy() {
         <Navbar />
 
         {/* Hero Section */}
-      <section className="pt-40 pb-16 px-6 md:px-12 lg:px-16 xl:px-20 bg-white">
+      <section 
+        className="relative pt-40 pb-16 px-6 md:px-12 lg:px-16 xl:px-20 bg-white bg-cover bg-center"
+        style={{ backgroundImage: `url('/assets/case_study_bg.png')` }}
+      >
         <div className="max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-24">
           <div className="lg:w-3/5">
-            <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-6">
+            <h3 className="text-gray-200 text-sm font-bold uppercase tracking-[0.2em] mb-6">
               CASE STUDY <span className="mx-2">•</span> REVENUE & LAND RECORDS
             </h3>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] tracking-tight mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-8">
               Mapping School<br/>
               Campuses with<br/>
               Centimeter Precision<br/>
               Using LiDAR Drones
             </h1>
-            <p className="text-gray-500 text-lg leading-relaxed max-w-2xl">
+            <p className="text-gray-300 text-lg leading-relaxed max-w-2xl">
               How Latrics India modernised land record management for institutional campuses through UAV LiDAR technology — delivering accuracy traditional surveys simply cannot.
             </p>
           </div>
           <div className="lg:w-2/5 flex items-end pb-4">
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 border-t border-l border-gray-200">
-              <div className="p-6 border-r border-b border-gray-200 bg-[#fafafa]">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 border-t border-l border-white/10">
+              <div className="p-6 border-r border-b border-white/10 bg-white/5">
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">PROJECT TYPE</p>
-                <p className="text-sm font-bold text-gray-900">School Infrastructure Mapping</p>
+                <p className="text-sm font-bold text-white">School Infrastructure Mapping</p>
               </div>
-              <div className="p-6 border-r border-b border-gray-200 bg-[#fafafa]">
+              <div className="p-6 border-r border-b border-white/10 bg-white/5">
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">TECHNOLOGY</p>
-                <p className="text-sm font-bold text-gray-900">UAV LiDAR · DGPS · WebGIS</p>
+                <p className="text-sm font-bold text-white">UAV LiDAR · DGPS · WebGIS</p>
               </div>
-              <div className="p-6 border-r border-b border-gray-200 bg-[#fafafa]">
+              <div className="p-6 border-r border-b border-white/10 bg-white/5">
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">SECTOR</p>
-                <p className="text-sm font-bold text-gray-900">Government / Education</p>
+                <p className="text-sm font-bold text-white">Government / Education</p>
               </div>
-              <div className="p-6 border-r border-b border-gray-200 bg-[#fafafa]">
+              <div className="p-6 border-r border-b border-white/10 bg-white/5">
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">OUTPUT RESOLUTION</p>
-                <p className="text-sm font-bold text-gray-900">2 cm Orthophotos</p>
+                <p className="text-sm font-bold text-white">2 cm Orthophotos</p>
               </div>
             </div>
           </div>
@@ -87,22 +90,25 @@ export default function SchoolCampusCaseStudy() {
       </section>
 
       {/* Technology Section */}
-      <section className="py-16 px-6 md:px-12 lg:px-16 xl:px-20 bg-white border-t border-gray-100">
-        <div className="max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
+      <section className="relative py-16 px-6 md:px-12 lg:px-16 xl:px-20 bg-[#1a1a1a] overflow-hidden border-y border-[#111]">
+        {/* Subtle Red Gradient Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#da291c] rounded-full blur-[150px] opacity-15 pointer-events-none" />
+
+        <div className="relative z-10 max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
           <div className="lg:w-1/2">
             <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">TECHNOLOGY DEEP DIVE</h3>
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight leading-tight">Why LiDAR is a game-changer for land records</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight">Why LiDAR is a game-changer for land records</h2>
           </div>
           <div className="lg:w-1/2 lg:pt-10">
-            <p className="text-gray-500 leading-relaxed mb-8">
+            <p className="text-gray-300 leading-relaxed mb-8">
               LiDAR captures millions of elevation points per second — delivering centimeter-level accuracy that GPS and optical surveys cannot match. For land record applications, this translates to razor-sharp boundary demarcation, reliable terrain analysis, and rapid scalable coverage even in complex, densely-built environments.
             </p>
             <div className="flex flex-wrap gap-3">
-              <span className="px-4 py-2 border border-gray-200 text-[10px] font-bold text-gray-500 uppercase tracking-widest">CENTIMETER ACCURACY</span>
-              <span className="px-4 py-2 border border-gray-200 text-[10px] font-bold text-gray-500 uppercase tracking-widest">POINT CLOUD PROCESSING</span>
-              <span className="px-4 py-2 border border-gray-200 text-[10px] font-bold text-gray-500 uppercase tracking-widest">DEM & DSM GENERATION</span>
-              <span className="px-4 py-2 border border-gray-200 text-[10px] font-bold text-gray-500 uppercase tracking-widest">SCALABLE COVERAGE</span>
-              <span className="px-4 py-2 border border-gray-200 text-[10px] font-bold text-gray-500 uppercase tracking-widest">ANOMALY DETECTION</span>
+              <span className="px-4 py-2 bg-[#da291c] text-[10px] font-bold text-white uppercase tracking-widest">CENTIMETER ACCURACY</span>
+              <span className="px-4 py-2 bg-[#da291c] text-[10px] font-bold text-white uppercase tracking-widest">POINT CLOUD PROCESSING</span>
+              <span className="px-4 py-2 bg-[#da291c] text-[10px] font-bold text-white uppercase tracking-widest">DEM & DSM GENERATION</span>
+              <span className="px-4 py-2 bg-[#da291c] text-[10px] font-bold text-white uppercase tracking-widest">SCALABLE COVERAGE</span>
+              <span className="px-4 py-2 bg-[#da291c] text-[10px] font-bold text-white uppercase tracking-widest">ANOMALY DETECTION</span>
             </div>
           </div>
         </div>
