@@ -30,7 +30,7 @@ export default function FaqSection() {
           {/* Header Section */}
           <div className="lg:w-1/3">
             <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
-              04 / FAQS
+              FAQS
             </h3>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight leading-tight">
               Common questions

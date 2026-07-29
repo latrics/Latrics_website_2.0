@@ -11,15 +11,17 @@ export default function PartnersHero() {
   };
 
   return (
-    <section 
-      className="relative min-h-screen flex items-center bg-gray-50 pt-32 pb-20 border-b border-gray-200 bg-cover bg-center"
-      style={{
-        backgroundImage: `url('/assets/partners_page_bg.png')`,
-      }}
-    >
+    <section className="relative min-h-screen flex items-center bg-gray-50 pt-32 pb-20 border-b border-gray-200">
+      {/* Background Image (Mirrored) */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center scale-x-[-1]"
+        style={{
+          backgroundImage: `url('/assets/partners_page_bg.png')`,
+        }}
+      />
       {/* Background tint overlay removed per user request */}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
         <div className="max-w-4xl">
           <p className="text-white text-xs md:text-sm font-heading font-semibold tracking-widest uppercase mb-6 drop-shadow-md">
             LATRICS CHANNEL PARTNER PROGRAM

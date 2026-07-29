@@ -23,15 +23,22 @@ export default function ApplyFormSection() {
   };
 
   return (
-    <div id="apply-form" className="w-full py-24 bg-[#1a1a1a]">
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
+    <div id="apply-form" className="relative w-full py-24 bg-[#1a1a1a] overflow-hidden border-t-4 border-[#da291c]">
+      
+      {/* Top Left Faded Red Gradient */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#da291c] rounded-full blur-[150px] opacity-20 pointer-events-none" />
+      
+      {/* Bottom Right Faded Red Gradient */}
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#da291c] rounded-full blur-[150px] opacity-20 pointer-events-none" />
+
+      <div className="relative max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 z-10">
         
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           
           {/* Left Column: Context & Steps */}
           <div className="lg:w-1/3 flex flex-col">
             <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
-              03 / APPLY
+              APPLY
             </h3>
             <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-6">
               Ready to scale?<br />Let's partner.

@@ -19,7 +19,7 @@ export default function PartnersPage() {
         <Navbar />
       <PartnersHero />
       <WhyPartnerSection />
-      <PartnerTiersSection />
+      {/* <PartnerTiersSection /> */}
       <ApplyFormSection />
       <FaqSection />
       </div>

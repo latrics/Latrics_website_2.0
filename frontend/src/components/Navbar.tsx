@@ -6,31 +6,11 @@ import React, { useState, useEffect } from "react";
 export default function Navbar() {
   const pathname = usePathname();
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      // Hide if scrolling down past 50px, show if scrolling up
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
 
   return (
     <>
       <nav 
-        className={`fixed top-0 left-0 w-full z-50 px-8 py-6 flex items-center justify-between bg-black/50 backdrop-blur-sm transition-transform duration-300 ${
-          isVisible ? "translate-y-0" : "-translate-y-full"
-        }`}
+        className="absolute top-0 left-0 w-full z-50 px-8 py-6 flex items-center justify-between bg-black/50 backdrop-blur-sm"
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 relative z-10">

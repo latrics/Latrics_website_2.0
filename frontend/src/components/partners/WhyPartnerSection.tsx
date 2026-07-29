@@ -33,7 +33,7 @@ export default function WhyPartnerSection() {
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-16 mb-16">
           <div className="lg:w-1/2">
             <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
-              01 / WHY PARTNER
+              WHY PARTNER
             </h3>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight leading-tight">
               Four reasons partners choose Latrics
