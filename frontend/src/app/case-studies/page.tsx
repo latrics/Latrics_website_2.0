@@ -9,12 +9,12 @@ export default function SchoolCampusCaseStudy() {
       <div className="relative z-10 bg-white flex-1">
         <Navbar />
 
-        {/* Hero Section */}
+      {/* Hero Section */}
       <section 
-        className="relative pt-40 pb-16 px-6 md:px-12 lg:px-16 xl:px-20 bg-white bg-cover bg-center"
+        className="relative min-h-screen flex items-center pt-32 pb-16 px-6 md:px-12 lg:px-16 xl:px-20 bg-white bg-cover bg-center"
         style={{ backgroundImage: `url('/assets/case_study_bg.png')` }}
       >
-        <div className="max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-24">
+        <div className="max-w-[1600px] mx-auto w-full flex flex-col lg:flex-row gap-12 lg:gap-24">
           <div className="lg:w-3/5">
             <h3 className="text-gray-200 text-sm font-bold uppercase tracking-[0.2em] mb-6">
               CASE STUDY <span className="mx-2">•</span> REVENUE & LAND RECORDS
