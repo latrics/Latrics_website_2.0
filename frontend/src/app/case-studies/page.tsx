@@ -155,18 +155,31 @@ export default function SchoolCampusCaseStudy() {
       </section>
 
       {/* Solution Section */}
-      <section className="py-16 px-6 md:px-12 lg:px-16 xl:px-20 bg-white border-t border-gray-100">
+      <section className="py-20 px-6 md:px-12 lg:px-16 xl:px-20 bg-[#161618] border-y border-[#2a2a2a]">
         <div className="max-w-[1600px] mx-auto flex flex-col xl:flex-row gap-16 lg:gap-24">
-          <div className="xl:w-1/3">
-            <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">SOLUTION</h3>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 tracking-tight leading-tight">LiDAR-driven digital mapping<br className="hidden xl:block"/>— end to end</h2>
-            <p className="text-gray-500 leading-relaxed">
+          <div className="xl:w-[45%]">
+            <div className="inline-flex items-center gap-2 bg-[#da291c] px-4 py-1.5 mb-8">
+              <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
+              <span className="text-white text-[11px] font-bold uppercase tracking-widest">THE SOLUTION</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight leading-tight">
+              LiDAR-driven digital<br className="hidden md:block" />
+              mapping <span className="text-[#da291c]">— end to end</span>
+            </h2>
+            <p className="text-gray-400 text-lg leading-relaxed mb-10">
               Latrics deployed a comprehensive LiDAR-based drone survey to capture high-resolution spatial data across school campuses. Using DGPS-enabled ground control points, we processed the data to generate precise boundary maps, orthophotos, and full 3D models — all integrated into a cloud-based WebGIS platform.
             </p>
+            <div className="flex flex-wrap gap-4">
+              {['UAV LIDAR', 'DGPS GCP', 'DEM / DSM', 'WEBGIS'].map((tag, i) => (
+                <span key={i} className="px-5 py-2 border border-white/20 text-white text-[11px] font-bold tracking-widest uppercase hover:border-[#da291c] hover:bg-[#da291c]/10 transition-colors cursor-default">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="xl:w-2/3">
-            <h3 className="text-gray-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">METHODOLOGY — HOW WE DID IT</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 border-t border-l border-gray-200 h-full">
+          <div className="xl:w-[55%] flex flex-col justify-center">
+            <h3 className="text-gray-400 text-[11px] font-bold uppercase tracking-[0.2em] mb-8">METHODOLOGY — HOW WE DID IT</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 lg:gap-5">
               {[
                 { num: "01", title: "Ground Truth First", desc: "Ground Control Points established with DGPS for centimeter-level accuracy before any aerial work." },
                 { num: "02", title: "Aerial Data Acquisition", desc: "LiDAR-equipped drones flown over campus boundaries for complete, high-density coverage." },
@@ -174,10 +187,10 @@ export default function SchoolCampusCaseStudy() {
                 { num: "04", title: "Field Verification", desc: "On-ground validation of all outputs against physical landmarks for real-world accuracy." },
                 { num: "05", title: "Delivery & Training", desc: "Handover of deliverables and stakeholder training on the WebGIS platform." }
               ].map((step, i) => (
-                <div key={i} className="p-6 border-r border-b border-gray-200 bg-[#fafafa]">
-                  <p className="text-[#da291c] text-[10px] font-bold mb-4">{step.num}</p>
-                  <h4 className="text-sm font-bold text-gray-900 mb-3">{step.title}</h4>
-                  <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
+                <div key={i} className="p-5 border-t-2 border border-white/5 border-t-white/20 bg-[#1e1e20] flex flex-col group cursor-default transition-all duration-300 hover:border-t-[#da291c] hover:border-[#da291c]/30 hover:bg-[#221717]">
+                  <p className="text-3xl font-bold mb-6 transition-colors duration-300 text-white/20 group-hover:text-[#da291c]/70">{step.num}</p>
+                  <h4 className="text-sm font-bold text-white mb-4 leading-snug">{step.title}</h4>
+                  <p className="text-gray-400 text-xs leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
