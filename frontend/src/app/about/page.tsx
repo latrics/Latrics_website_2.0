@@ -27,11 +27,11 @@ export default function AboutPage() {
     { name: "Abhishek Kasana", role: "CHIEF EXECUTIVE OFFICER", desc: "Key member of the Latrics leadership team.", img: "/assets/abhishek_kasana.jpg" },
     { name: "Sanjay Pathak", role: "CHIEF GROWTH OFFICER", desc: "Key member of the Latrics leadership team.", img: "/assets/Sanjay_pathak.png" },
     { name: "Satish Hosur", role: "DIRECTOR-ENERGY", desc: "Key member of the Latrics leadership team.", img: "/assets/Satish_Hoshur.png" },
-    { name: "Sundaravalli Balaji", role: "DIRECTOR-FINANCE", desc: "Key member of the Latrics leadership team." },
-    { name: "Suriyaprabha R.", role: "DIRECTOR-OPERATIONS", desc: "Key member of the Latrics leadership team." },
-    { name: "Bhargava Ramana", role: "DIRECTOR-STRATEGY", desc: "Key member of the Latrics leadership team." },
-    { name: "Sivaram Kumar", role: "DIRECTOR-BD", desc: "Key member of the Latrics leadership team." },
-    { name: "Dr. Mamatha C S", role: "DIRECTOR-HR", desc: "Key member of the Latrics leadership team." }
+    { name: "Sundaravalli Balaji", role: "DIRECTOR-FINANCE", desc: "Key member of the Latrics leadership team.", img: "/assets/sundar_balaji.png" },
+    { name: "Suriyaprabha R.", role: "DIRECTOR-OPERATIONS", desc: "Key member of the Latrics leadership team.", img: "/assets/suriya_prabha.png" },
+    { name: "Bhargava Ramana", role: "DIRECTOR-STRATEGY", desc: "Key member of the Latrics leadership team.", img: "/assets/bhargava_ramana.jpg" },
+    { name: "Sivaram Kumar", role: "DIRECTOR-BD", desc: "Key member of the Latrics leadership team.", img: "/assets/sivaram_kumar.png" },
+    { name: "Dr. Mamatha C S", role: "DIRECTOR-HR", desc: "Key member of the Latrics leadership team.", img: "/assets/mamatha_cs.png" }
   ];
 
   return (
