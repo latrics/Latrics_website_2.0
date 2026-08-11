@@ -242,6 +242,50 @@ export default function SchoolCampusCaseStudy() {
         </div>
       </section>
 
+      {/* Output Preview Section */}
+      <section className="py-10 md:py-12 px-6 md:px-12 lg:px-16 xl:px-20 bg-[#fafafa]">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 mb-8">
+            <div className="lg:w-1/2">
+              <h3 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-3">OUTPUT PREVIEW</h3>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight leading-tight">Preview and download the final outputs</h2>
+            </div>
+            <div className="lg:w-1/2 lg:pt-6">
+              <p className="text-gray-600 leading-relaxed text-sm">
+                Every deliverable is available as a print-ready PDF and a high-resolution PNG — pulled directly from the same dataset stakeholders reviewed on WebGIS.
+              </p>
+            </div>
+          </div>
+          
+          <div className="bg-white border border-gray-100 shadow-[0_2px_10px_rgba(0,0,0,0.04)] flex flex-col md:flex-row items-stretch p-0">
+            <div className="w-full md:w-[280px] relative aspect-[4/3] md:aspect-auto md:min-h-[160px] bg-gray-900 flex-shrink-0">
+              <Image src="/assets/topo_map.png" alt="Topographic map" fill className="object-cover" />
+              <div className="absolute top-4 left-4 z-10 text-white text-[10px] font-bold tracking-widest uppercase">
+                MAP • 1:500
+              </div>
+            </div>
+            <div className="flex-1 p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <h3 className="text-[16px] font-bold text-gray-900 mb-1">High-precision topographic map</h3>
+                <p className="text-gray-500 text-sm">
+                  Complete boundary demarcation and spot-level measurements — available for download.
+                </p>
+              </div>
+              <div className="flex items-center gap-3 shrink-0">
+                <button className="flex items-center gap-2 px-4 py-2 border border-gray-200 text-[10px] font-bold text-gray-900 tracking-widest uppercase hover:bg-gray-50 transition-colors">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                  PNG
+                </button>
+                <button className="flex items-center gap-2 px-4 py-2 bg-[#161618] border border-[#161618] text-[10px] font-bold text-white tracking-widest uppercase hover:bg-black transition-colors">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                  PDF
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       </div>
       <Footer />
     </main>

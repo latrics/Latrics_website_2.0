@@ -4,6 +4,40 @@ import Image from "next/image";
 
 export default function BottomCtaBanner() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", company: "" });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("http://localhost:3001/api/cta", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "BottomCtaBanner - Demo Request",
+          ...formData,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      setStatus("success");
+      setTimeout(() => {
+        setIsModalOpen(false);
+        setStatus("idle");
+        setFormData({ name: "", email: "", company: "" });
+      }, 2000);
+    } catch (err: any) {
+      setStatus("error");
+      setErrorMessage(err.message || "An error occurred");
+    }
+  };
 
   return (
     <>
@@ -70,45 +104,61 @@ export default function BottomCtaBanner() {
               See LiCopter P720 fly in your terrain — share your details and our field team will schedule a live demonstration.
             </p>
 
-            <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); setIsModalOpen(false); }}>
-              <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Full Name</label>
-                <input
-                  type="text"
-                  required
-                  className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-gray-900 focus:outline-none focus:border-[#da291c] rounded-none transition-colors"
-                  placeholder="John Doe"
-                />
+            {status === "success" ? (
+              <div className="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50" role="alert">
+                <span className="font-medium">Success!</span> We will contact you soon.
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            ) : (
+              <form className="space-y-5" onSubmit={handleSubmit}>
+                {status === "error" && (
+                  <div className="text-red-500 text-sm mb-4">{errorMessage}</div>
+                )}
                 <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Email</label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-gray-900 focus:outline-none focus:border-[#da291c] rounded-none transition-colors"
-                    placeholder="john@company.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Company Name</label>
+                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Full Name</label>
                   <input
                     type="text"
                     required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-gray-900 focus:outline-none focus:border-[#da291c] rounded-none transition-colors"
-                    placeholder="Latrics Innovations"
+                    placeholder="John Doe"
                   />
                 </div>
-              </div>
 
-              <button
-                type="submit"
-                className="w-full bg-[#da291c] text-white py-4 text-sm font-bold uppercase tracking-widest hover:bg-red-700 transition-colors rounded-none mt-4"
-              >
-                Request Demo
-              </button>
-            </form>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Email</label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-gray-900 focus:outline-none focus:border-[#da291c] rounded-none transition-colors"
+                      placeholder="john@company.com"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Company Name</label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-gray-900 focus:outline-none focus:border-[#da291c] rounded-none transition-colors"
+                      placeholder="Latrics Innovations"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="w-full bg-[#da291c] text-white py-4 text-sm font-bold uppercase tracking-widest hover:bg-red-700 transition-colors rounded-none mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {status === "loading" ? "Submitting..." : "Request Demo"}
+                </button>
+              </form>
+            )}
 
             <div className="mt-6 pt-6 border-t border-gray-200">
               <p className="text-xs text-gray-500 font-medium leading-relaxed">

@@ -13,13 +13,36 @@ export default function ApplyFormSection() {
     businessDetails: ""
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API call
-    console.log("Submitting Partner Application:", formData);
-    setSubmitted(true);
+    setStatus("loading");
+    setErrorMessage("");
+    try {
+      const response = await fetch("http://localhost:3001/api/cta", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "Partner Application",
+          name: formData.contactName,
+          email: formData.workEmail,
+          company: formData.companyName,
+          phone: formData.phoneNumber,
+          message: formData.businessDetails,
+          additionalData: {
+            country: formData.country,
+            partnerTier: formData.partnerTier
+          }
+        }),
+      });
+      if (!response.ok) throw new Error("Failed to submit form");
+      setStatus("success");
+    } catch (err: any) {
+      setStatus("error");
+      setErrorMessage(err.message || "An error occurred");
+    }
   };
 
   return (
@@ -79,19 +102,58 @@ export default function ApplyFormSection() {
 
           {/* Right Column: Form Card */}
           <div className="lg:w-2/3">
-            <div className="bg-white p-8 md:p-12 shadow-xl">
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Partner Application</h3>
-                <p className="text-gray-500 text-xs">Please share details about your business and goals.</p>
-              </div>
-
-              {submitted ? (
-                <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-6 rounded-sm">
-                  <h4 className="font-bold text-lg mb-2">Application Submitted Successfully!</h4>
-                  <p className="text-sm">Thank you for your interest in partnering with Latrics. Our team will review your application and get back to you within 5 business days.</p>
+            {status === "success" ? (
+              <div className="flex flex-col md:flex-row shadow-xl overflow-hidden h-full min-h-[450px]">
+                {/* Left Side (Dark) */}
+                <div className="md:w-5/12 bg-[#111111] p-8 md:p-12 flex flex-col justify-center">
+                  <div className="w-16 h-16 rounded-full bg-[#0d2a1f] flex items-center justify-center mb-auto border border-emerald-900/30">
+                    <svg className="w-8 h-8 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div className="mt-12">
+                    <h4 className="text-[#da291c] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">STEP 1 OF 3</h4>
+                    <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">Application<br/>submitted</h3>
+                  </div>
                 </div>
-              ) : (
+                
+                {/* Right Side (Light) */}
+                <div className="md:w-7/12 bg-white p-8 md:p-12 flex flex-col justify-center">
+                  <p className="text-gray-500 mb-10 text-lg">Here's what happens on our end while you wait.</p>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-6 h-6 rounded-full bg-[#da291c] text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</div>
+                      <p className="text-gray-900 font-medium">Review <span className="text-gray-500 font-normal">— channel team checks fit within 48 hours</span></p>
+                    </div>
+                    
+                    <div className="flex items-start gap-4">
+                      <div className="w-6 h-6 rounded-full border-2 border-gray-200 text-gray-400 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</div>
+                      <p className="text-gray-400 font-medium">Discovery call scheduled</p>
+                    </div>
+                    
+                    <div className="flex items-start gap-4">
+                      <div className="w-6 h-6 rounded-full border-2 border-gray-200 text-gray-400 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</div>
+                      <p className="text-gray-400 font-medium">Onboarding & launch</p>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-10 pt-8 border-t border-gray-100">
+                    <p className="text-gray-500">Questions? <a href="mailto:info@latrics.com" className="text-[#da291c] font-medium hover:underline">info@latrics.com</a></p>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="bg-white p-8 md:p-12 shadow-xl">
+                <div className="mb-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Partner Application</h3>
+                  <p className="text-gray-500 text-xs">Please share details about your business and goals.</p>
+                </div>
+
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {status === "error" && (
+                    <div className="text-red-500 text-sm mb-4">{errorMessage}</div>
+                  )}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Row 1 */}
                     <div>
@@ -191,17 +253,18 @@ export default function ApplyFormSection() {
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-4">
                     <button 
                       type="submit"
-                      className="bg-[#da291c] text-white px-8 py-3.5 text-xs font-bold hover:bg-red-700 transition-colors uppercase tracking-widest"
+                      disabled={status === "loading"}
+                      className="bg-[#da291c] text-white px-8 py-3.5 text-xs font-bold hover:bg-red-700 transition-colors uppercase tracking-widest disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      SUBMIT APPLICATION &rarr;
+                      {status === "loading" ? "SUBMITTING..." : "SUBMIT APPLICATION \u2192"}
                     </button>
                     <span className="text-[9px] font-bold tracking-widest text-[#da291c] uppercase">
                       REVIEWED WITHIN 5 BUSINESS DAYS
                     </span>
                   </div>
                 </form>
-              )}
-            </div>
+              </div>
+            )}
           </div>
           
         </div>

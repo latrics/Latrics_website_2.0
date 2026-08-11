@@ -6,6 +6,40 @@ import React, { useState, useEffect } from "react";
 export default function Navbar() {
   const pathname = usePathname();
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "", company: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("http://localhost:3001/api/cta", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "Navbar Demo Request",
+          ...formData,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      setStatus("success");
+      setTimeout(() => {
+        setIsDemoModalOpen(false);
+        setStatus("idle");
+        setFormData({ name: "", phone: "", email: "", company: "", message: "" });
+      }, 2000);
+    } catch (err: any) {
+      setStatus("error");
+      setErrorMessage(err.message || "An error occurred");
+    }
+  };
 
   return (
     <>
@@ -103,64 +137,84 @@ export default function Navbar() {
             <h2 className="text-3xl font-black text-gray-900 mb-2 tracking-tight">Request a Demo</h2>
             <p className="text-sm text-gray-500 mb-8 font-medium">Fill out the form below and our team will get back to you shortly.</p>
 
-            <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); setIsDemoModalOpen(false); }}>
-              <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Full Name</label>
-                <input 
-                  type="text" 
-                  required
-                  className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-gray-900 focus:outline-none focus:border-[#da291c] rounded-none transition-colors"
-                  placeholder="John Doe"
-                />
+            {status === "success" ? (
+              <div className="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50" role="alert">
+                <span className="font-medium">Success!</span> We will contact you soon.
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            ) : (
+              <form className="space-y-5" onSubmit={handleSubmit}>
+                {status === "error" && (
+                  <div className="text-red-500 text-sm mb-4">{errorMessage}</div>
+                )}
                 <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Phone No.</label>
+                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Full Name</label>
                   <input 
-                    type="tel" 
+                    type="text" 
                     required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-gray-900 focus:outline-none focus:border-[#da291c] rounded-none transition-colors"
-                    placeholder="+91 98765 43210"
+                    placeholder="John Doe"
                   />
                 </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Phone No.</label>
+                    <input 
+                      type="tel" 
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-gray-900 focus:outline-none focus:border-[#da291c] rounded-none transition-colors"
+                      placeholder="+91 98765 43210"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Email</label>
+                    <input 
+                      type="email" 
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-gray-900 focus:outline-none focus:border-[#da291c] rounded-none transition-colors"
+                      placeholder="john@company.com"
+                    />
+                  </div>
+                </div>
+
                 <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Email</label>
+                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Company Name</label>
                   <input 
-                    type="email" 
-                    required
+                    type="text" 
+                    value={formData.company}
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-gray-900 focus:outline-none focus:border-[#da291c] rounded-none transition-colors"
-                    placeholder="john@company.com"
+                    placeholder="Latrics Innovations"
                   />
                 </div>
-              </div>
 
-              <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Company Name</label>
-                <input 
-                  type="text" 
-                  className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-gray-900 focus:outline-none focus:border-[#da291c] rounded-none transition-colors"
-                  placeholder="Latrics Innovations"
-                />
-              </div>
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Enquiry Message</label>
+                  <textarea 
+                    rows={4}
+                    required
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-gray-900 focus:outline-none focus:border-[#da291c] rounded-none transition-colors resize-none"
+                    placeholder="Tell us about your requirements..."
+                  ></textarea>
+                </div>
 
-              <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Enquiry Message</label>
-                <textarea 
-                  rows={4}
-                  required
-                  className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-gray-900 focus:outline-none focus:border-[#da291c] rounded-none transition-colors resize-none"
-                  placeholder="Tell us about your requirements..."
-                ></textarea>
-              </div>
-
-              <button 
-                type="submit"
-                className="w-full bg-[#da291c] text-white py-4 text-sm font-bold uppercase tracking-widest hover:bg-red-700 transition-colors rounded-none mt-4"
-              >
-                Submit Request
-              </button>
-            </form>
+                <button 
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="w-full bg-[#da291c] text-white py-4 text-sm font-bold uppercase tracking-widest hover:bg-red-700 transition-colors rounded-none mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {status === "loading" ? "Submitting..." : "Submit Request"}
+                </button>
+              </form>
+            )}
 
           </div>
         </div>
