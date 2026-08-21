@@ -7,20 +7,20 @@ const badges = [
   {
     icon: "/assets/DGCA Stamp seal.png",
     title: "DGCA Certified",
-    subtitle: "Fleet & Operator",
-    tagline: "Govt. Approved Platform",
+    subtitle: "FLEET & OPERATOR",
+    tagline: "DGCA approved for safe, compliant operations.",
   },
   {
     icon: "/assets/iso 9001.png",
     title: "ISO 9001",
-    subtitle: "Quality Management",
-    tagline: "Aerospace Standards",
+    subtitle: "QUALITY MANAGEMENT",
+    tagline: "Certified processes for consistent quality.",
   },
   {
     icon: "/assets/make_in_india_stamp.png",
     title: "Made in India",
-    subtitle: "Indigenous Manufacturing",
-    tagline: "100% In-House R&D",
+    subtitle: "ENGINEERED FOR IMPACT",
+    tagline: "Designed and built in India to serve the world.",
   },
 ];
 
@@ -54,14 +54,14 @@ export default function TrustBar() {
             </div>
 
             {/* Text Info */}
-            <div className="flex flex-col justify-center">
-              <h4 className="text-[#0f172a] font-bold text-sm md:text-base leading-tight">
+            <div className="flex flex-col justify-center gap-1">
+              <h4 className="text-[#0f172a] font-bold text-sm md:text-base leading-snug">
                 {badge.title}
               </h4>
-              <p className="text-[#0f172a] text-[9px] md:text-[10px] font-bold uppercase tracking-wider leading-tight mt-0.5">
+              <p className="text-[#0f172a] text-[9px] md:text-[10px] font-bold uppercase tracking-wider leading-snug">
                 {badge.subtitle}
               </p>
-              <p className="text-slate-500 text-[10px] md:text-xs font-medium leading-tight mt-0.5">
+              <p className="text-slate-500 text-[10px] md:text-xs font-medium leading-snug">
                 {badge.tagline}
               </p>
             </div>

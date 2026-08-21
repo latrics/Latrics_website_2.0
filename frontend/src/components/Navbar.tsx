@@ -44,78 +44,80 @@ export default function Navbar() {
   return (
     <>
       <nav 
-        className="absolute top-0 left-0 w-full z-50 px-8 py-6 flex items-center justify-between bg-black/50 backdrop-blur-sm"
+        className="absolute top-0 left-0 w-full z-50 py-6 bg-black/50 backdrop-blur-sm"
       >
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 relative z-10">
-          <img src="/assets/Latrics_white&red_logo.png" alt="Latrics Logo" className="h-8 object-contain" />
-        </Link>
+        <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 flex items-center justify-between relative">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 relative z-10">
+            <img src="/assets/Latrics_white&red_logo.png" alt="Latrics Logo" className="h-8 object-contain" />
+          </Link>
 
-        {/* Navigation Links (Centered) */}
-        <div className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-6 text-sm text-gray-300 font-medium">
-          {[
-            { name: "Home", href: "/", exact: true },
-            { name: "Products", href: "/products/licopter-p720", match: "/products" },
-            { name: "Partners", href: "/partners", match: "/partners" },
-            { name: "Case Studies", href: "/case-studies", match: "/case-studies" },
-            { name: "About", href: "/about", match: "/about" }
-          ].map((link) => {
-            const active = link.exact 
-              ? pathname === link.href 
-              : pathname?.startsWith(link.match || "");
+          {/* Navigation Links (Centered) */}
+          <div className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-6 text-sm text-gray-300 font-medium">
+            {[
+              { name: "Home", href: "/", exact: true },
+              { name: "Products", href: "/products/licopter-p720", match: "/products" },
+              { name: "Partners", href: "/partners", match: "/partners" },
+              { name: "Case Studies", href: "/case-studies", match: "/case-studies" },
+              { name: "About", href: "/about", match: "/about" }
+            ].map((link) => {
+              const active = link.exact 
+                ? pathname === link.href 
+                : pathname?.startsWith(link.match || "");
 
-            return (
-              <Link 
-                key={link.name}
-                href={link.href} 
-                className={`transition-colors py-1 ${active ? "text-white border-b-2 border-[#da291c] font-semibold" : "hover:text-white"}`}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
-        </div>
+              return (
+                <Link 
+                  key={link.name}
+                  href={link.href} 
+                  className={`transition-colors py-1 ${active ? "text-white border-b-2 border-[#da291c] font-semibold" : "hover:text-white"}`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+          </div>
 
-        {/* CTA Buttons */}
-        <div className="flex items-center gap-6 relative z-10">
-          <style dangerouslySetInnerHTML={{ __html: `
-            @keyframes defenseGlow {
-              0%, 100% {
-                box-shadow: 0 0 20px 4px rgba(218, 41, 28, 0.4), inset 0 0 12px 2px rgba(218, 41, 28, 0.3);
+          {/* CTA Buttons */}
+          <div className="flex items-center gap-6 relative z-10">
+            <style dangerouslySetInnerHTML={{ __html: `
+              @keyframes defenseGlow {
+                0%, 100% {
+                  box-shadow: 0 0 20px 4px rgba(218, 41, 28, 0.4), inset 0 0 12px 2px rgba(218, 41, 28, 0.3);
+                }
+                50% {
+                  box-shadow: 0 0 35px 8px rgba(218, 41, 28, 0.6), inset 0 0 20px 4px rgba(218, 41, 28, 0.45);
+                }
               }
-              50% {
-                box-shadow: 0 0 35px 8px rgba(218, 41, 28, 0.6), inset 0 0 20px 4px rgba(218, 41, 28, 0.45);
+              .btn-defense {
+                background-color: #0A0A0A;
+                border: 1px solid #DA291C;
+                animation: defenseGlow 3.5s ease-in-out infinite;
+                transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
               }
-            }
-            .btn-defense {
-              background-color: #0A0A0A;
-              border: 1px solid #DA291C;
-              animation: defenseGlow 3.5s ease-in-out infinite;
-              transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            }
-            .btn-defense:hover {
-              background-color: #DA291C;
-              border-color: #DA291C;
-              box-shadow: 0 0 45px 12px rgba(218, 41, 28, 0.7);
-              transform: scale(1.02);
-            }
-          `}} />
+              .btn-defense:hover {
+                background-color: #DA291C;
+                border-color: #DA291C;
+                box-shadow: 0 0 45px 12px rgba(218, 41, 28, 0.7);
+                transform: scale(1.02);
+              }
+            `}} />
 
-          <a 
-            href="https://www.terraindesk.com/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn-defense text-white px-6 py-2.5 text-sm font-semibold rounded-none inline-block text-center"
-          >
-            Open Terrain Desk
-          </a>
+            <a 
+              href="https://www.terraindesk.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn-defense text-white px-6 py-2.5 text-sm font-semibold rounded-none inline-block text-center"
+            >
+              Open Terrain Desk
+            </a>
 
-          <button 
-            onClick={() => setIsDemoModalOpen(true)}
-            className="bg-white text-black px-6 py-2.5 text-sm font-semibold hover:bg-gray-100 transition-colors rounded-none"
-          >
-            Request a demo
-          </button>
+            <button 
+              onClick={() => setIsDemoModalOpen(true)}
+              className="bg-white text-black px-6 py-2.5 text-sm font-semibold hover:bg-gray-100 transition-colors rounded-none"
+            >
+              Request a demo
+            </button>
+          </div>
         </div>
       </nav>
 
