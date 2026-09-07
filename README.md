@@ -52,7 +52,7 @@ Once dependencies are installed, you can start the local development server:
 npm run dev
 ```
 
-The application will launch on [http://localhost:3000](http://localhost:3000). Open this URL in your browser to see the site in action. Any edits you make to the source files will automatically trigger a hot-reload in the browser.
+The application will launch on [https://www.latrics.com/](https://www.latrics.com/). Open this URL in your browser to see the site in action. Any edits you make to the source files will automatically trigger a hot-reload in the browser.
 
 ## 🚢 Building for Production
 
