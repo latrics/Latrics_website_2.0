@@ -10,6 +10,33 @@ export default function Navbar() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
+  useEffect(() => {
+    const handlePopState = () => {
+      const searchParams = new URLSearchParams(window.location.search);
+      setIsDemoModalOpen(searchParams.get("request-demo") === "true");
+    };
+    
+    handlePopState();
+    
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  const openDemoModal = () => {
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set("request-demo", "true");
+    window.history.pushState({}, "", `${window.location.pathname}?${searchParams.toString()}`);
+    setIsDemoModalOpen(true);
+  };
+
+  const closeDemoModal = () => {
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.delete("request-demo");
+    const newUrl = searchParams.toString() ? `${window.location.pathname}?${searchParams.toString()}` : window.location.pathname;
+    window.history.pushState({}, "", newUrl);
+    setIsDemoModalOpen(false);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
@@ -31,7 +58,7 @@ export default function Navbar() {
 
       setStatus("success");
       setTimeout(() => {
-        setIsDemoModalOpen(false);
+        closeDemoModal();
         setStatus("idle");
         setFormData({ name: "", phone: "", email: "", company: "", message: "" });
       }, 2000);
@@ -112,7 +139,7 @@ export default function Navbar() {
             </a>
 
             <button 
-              onClick={() => setIsDemoModalOpen(true)}
+              onClick={openDemoModal}
               className="bg-white text-black px-6 py-2.5 text-sm font-semibold hover:bg-gray-100 transition-colors rounded-none"
             >
               Request a demo
@@ -128,7 +155,7 @@ export default function Navbar() {
             
             {/* Close Button */}
             <button 
-              onClick={() => setIsDemoModalOpen(false)}
+              onClick={closeDemoModal}
               className="absolute top-6 right-6 text-gray-400 hover:text-black transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
